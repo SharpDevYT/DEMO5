@@ -1,983 +1,824 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shriji Tuition Classes — 5.0★ Rated Tuition in Babarpur, Shahdara, Delhi</title>
-<meta name="description" content="Shriji Tuition Classes (श्रीजी ट्यूशन क्लासेज) — 5.0★ rated tutoring in Babarpur, Shahdara, Delhi 110032. Classes VI–XII, near Maladevi School. Open till 8:30 PM. Call 092051 83390." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crafted Salon | Academy — 4.9★ Beauty Parlour in Babarpur, Shahdara, Delhi</title>
+<meta name="description" content="Crafted Salon | Academy — a 4.9-rated unisex beauty parlour & training academy on Main Babarpur Road, Shahdara, Delhi. Book on WhatsApp. Open till 9 PM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-  :root{
-    --ink:#171630;
-    --ink-soft:#3a3760;
-    --paper:#FFF9ED;
-    --white:#ffffff;
-    --indigo:#4F46E5;
-    --indigo-deep:#3730A3;
-    --indigo-soft:#EDEBFF;
-    --amber:#FFC53D;
-    --amber-deep:#F59E0B;
-    --coral:#FF6B6B;
-    --mint:#34D399;
-  }
-  html{ scroll-behavior:smooth; }
-  body{ font-family:'Inter',system-ui,sans-serif; background:var(--paper); color:var(--ink); }
-  .font-display{ font-family:'Sora',sans-serif; }
-  .font-hindi{ font-family:'Baloo 2','Sora',sans-serif; }
-
-  /* subtle grid pattern — the chosen background treatment */
-  .grid-bg{
-    background-image:
-      linear-gradient(to right, rgba(23,22,48,.055) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(23,22,48,.055) 1px, transparent 1px);
-    background-size:44px 44px;
-  }
-  .grid-bg-dark{
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
-    background-size:44px 44px;
-  }
-
-  /* flat-bordered cards with hard offset shadow — chosen card style */
-  .hc{
-    background:var(--white);
-    border:2px solid var(--ink);
-    border-radius:1.25rem;
-    box-shadow:6px 6px 0 0 var(--ink);
-    transition:transform .22s cubic-bezier(.2,.65,.3,1), box-shadow .22s cubic-bezier(.2,.65,.3,1);
-  }
-  .hc-hover:hover{ transform:translate(-3px,-3px); box-shadow:10px 10px 0 0 var(--ink); }
-  .btn-hard{
-    border:2px solid var(--ink);
-    box-shadow:4px 4px 0 0 var(--ink);
-    transition:transform .16s cubic-bezier(.2,.65,.3,1), box-shadow .16s cubic-bezier(.2,.65,.3,1);
-  }
-  .btn-hard:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 0 var(--ink); }
-  .btn-hard:active{ transform:translate(2px,2px); box-shadow:1px 1px 0 0 var(--ink); }
-  .chip{ border:2px solid var(--ink); }
-
-  /* marquee */
-  @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
-  .marquee-track{ display:flex; width:max-content; animation:marquee 26s linear infinite; }
-
-  /* floating accents */
-  @keyframes floaty{ 0%,100%{ transform:translateY(0) rotate(var(--rot,0deg)); } 50%{ transform:translateY(-10px) rotate(var(--rot,0deg)); } }
-  .floaty{ animation:floaty 5s ease-in-out infinite; }
-  @keyframes spin-slow{ to{ transform:rotate(360deg);} }
-  .spin-slow{ animation:spin-slow 50s linear infinite; }
-
-  /* tab swap */
-  #heroSwap{ transition:opacity .18s ease, transform .18s ease; }
-  #heroSwap.swap-out{ opacity:0; transform:translateY(8px); }
-
-  /* reveal on scroll */
-  .reveal{ opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.65,.3,1); }
-  .reveal.in{ opacity:1; transform:none; }
-
-  /* modal */
-  @keyframes pop-in{ from{ opacity:0; transform:translateY(14px) scale(.97);} to{ opacity:1; transform:none;} }
-  .modal-pop{ animation:pop-in .26s cubic-bezier(.2,.65,.3,1) both; }
-  @keyframes shake{ 0%,100%{transform:translateX(0);} 20%,60%{transform:translateX(-7px);} 40%,80%{transform:translateX(7px);} }
-  .shake{ animation:shake .4s ease; }
-
-  /* scroll snap mentors */
-  .snap-row{ scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-  .snap-row::-webkit-scrollbar{ display:none; }
-  .snap-row > *{ scroll-snap-align:start; }
-
-  /* floating enquire pulse */
-  @keyframes ping-ring{ 0%{ transform:scale(1); opacity:.55;} 80%,100%{ transform:scale(1.55); opacity:0;} }
-  .pulse-ring::before{
-    content:""; position:absolute; inset:-2px; border-radius:9999px;
-    border:2px solid var(--amber-deep); animation:ping-ring 2s cubic-bezier(0,0,.2,1) infinite; z-index:-1;
-  }
-
-  mark.hl{ background:linear-gradient(transparent 62%, var(--amber) 62%, var(--amber) 96%, transparent 96%); color:inherit; padding:0 .08em; }
-
-  @media (prefers-reduced-motion: reduce){
-    .marquee-track,.floaty,.spin-slow,.pulse-ring::before{ animation:none !important; }
-    html{ scroll-behavior:auto; }
-    .reveal{ opacity:1; transform:none; transition:none; }
-  }
+:root{
+  --bg:#0B0A08;
+  --panel:#14110C;
+  --panel-2:#1B1710;
+  --line:rgba(232,211,168,.14);
+  --line-soft:rgba(232,211,168,.08);
+  --ivory:#F4ECDB;
+  --muted:#A89C85;
+  --faint:#6E6455;
+  --gold:#D9A94E;
+  --gold-2:#F0D48C;
+  --gold-deep:#A87B2A;
+  --rose:#C97F6A;
+}
+html{background:var(--bg)}
+body{
+  font-family:'Manrope',ui-sans-serif,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ivory);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--gold);color:#140F06}
+.font-serif-d{font-family:'Fraunces',Georgia,serif}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    linear-gradient(rgba(217,169,78,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(217,169,78,.055) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 120% 90% at 50% 0%,#000 30%,transparent 85%);
+  mask-image:radial-gradient(ellipse 120% 90% at 50% 0%,#000 30%,transparent 85%);
+}
+body::after{
+  content:"";
+  position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.glow-orb{position:absolute;border-radius:9999px;filter:blur(90px);pointer-events:none}
+.glass{
+  background:linear-gradient(160deg,rgba(30,25,16,.72),rgba(18,15,10,.82));
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid var(--line);
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.7),inset 0 1px 0 rgba(244,236,219,.06);
+}
+.glass-soft{
+  background:rgba(24,20,13,.55);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--line-soft);
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.68rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+}
+.eyebrow::before{content:"";width:2rem;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.btn-gold{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));
+  color:#181003;font-weight:800;
+  border-radius:9999px;
+  box-shadow:0 10px 30px -8px rgba(217,169,78,.45),inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s;
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(217,169,78,.55),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn-gold:active{transform:translateY(0) scale(.98)}
+.btn-ghost{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  border:1px solid var(--line);color:var(--ivory);font-weight:700;border-radius:9999px;
+  background:rgba(255,255,255,.02);
+  transition:border-color .3s,background .3s,transform .35s cubic-bezier(.22,1,.36,1);
+}
+.btn-ghost:hover{border-color:rgba(217,169,78,.5);background:rgba(217,169,78,.07);transform:translateY(-2px)}
+.field{
+  width:100%;border-radius:.9rem;border:1px solid var(--line);
+  background:rgba(11,10,8,.6);color:var(--ivory);
+  padding:.85rem 1rem .85rem 2.9rem;font-size:.95rem;outline:none;
+  transition:border-color .3s,box-shadow .3s,background .3s;
+}
+.field::placeholder{color:var(--faint)}
+.field:focus{border-color:rgba(217,169,78,.65);box-shadow:0 0 0 4px rgba(217,169,78,.12);background:rgba(11,10,8,.85)}
+select.field{appearance:none;-webkit-appearance:none}
+select.field option{background:#171309;color:var(--ivory)}
+.field-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.nav-link{position:relative;font-size:.85rem;font-weight:600;color:var(--muted);transition:color .3s;letter-spacing:.02em}
+.nav-link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--gold);transition:width .35s cubic-bezier(.22,1,.36,1)}
+.nav-link:hover{color:var(--ivory)}
+.nav-link:hover::after{width:100%}
+.header-scrolled{background:rgba(11,10,8,.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line-soft);box-shadow:0 10px 40px -20px rgba(0,0,0,.8)}
+.card-lift{transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .5s}
+.card-lift:hover{transform:translateY(-8px);border-color:rgba(217,169,78,.4);box-shadow:0 40px 80px -30px rgba(0,0,0,.85),0 0 0 1px rgba(217,169,78,.12)}
+.img-zoom{transition:transform 1.1s cubic-bezier(.22,1,.36,1),filter .6s}
+.card-lift:hover .img-zoom{transform:scale(1.07)}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.reveal.on{opacity:1;transform:translateY(0)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.floaty{animation:floaty 7s ease-in-out infinite}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(217,169,78,.5)}70%{box-shadow:0 0 0 14px rgba(217,169,78,0)}100%{box-shadow:0 0 0 0 rgba(217,169,78,0)}}
+.pulse-ring{animation:pulse-ring 2.4s cubic-bezier(.4,0,.6,1) infinite}
+.form-flash{box-shadow:0 0 0 2px rgba(217,169,78,.7),0 24px 60px -24px rgba(0,0,0,.7)!important}
+.map-dark{filter:grayscale(15%) invert(92%) hue-rotate(180deg) contrast(92%) brightness(.92);border:0;width:100%;height:100%}
+.rating-bar{height:6px;border-radius:9999px;background:rgba(232,211,168,.1);overflow:hidden}
+.rating-bar > span{display:block;height:100%;border-radius:9999px;background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-2))}
+.star{color:var(--gold)}
+.star svg{fill:currentColor}
+.chip{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--line);border-radius:9999px;padding:.4rem .9rem;font-size:.75rem;font-weight:600;color:var(--muted);transition:all .3s}
+.chip:hover{border-color:rgba(217,169,78,.5);color:var(--gold-2);background:rgba(217,169,78,.06)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:#0B0A08}
+::-webkit-scrollbar-thumb{background:#33291a;border-radius:99px;border:2px solid #0B0A08}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-deep)}
+@media (max-width:640px){.marquee-track{animation-duration:20s}}
 </style>
 </head>
-<body class="antialiased overflow-x-hidden">
+<body class="antialiased">
 
-<!-- ══════════ ANNOUNCEMENT BAR ══════════ -->
-<div class="bg-[var(--ink)] text-[var(--paper)] text-[13px] font-medium">
-  <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2 text-center flex-wrap">
-    <i data-lucide="megaphone" class="w-4 h-4 text-[var(--amber)] shrink-0"></i>
-    <span>Admissions open · Near Maladevi School, Babarpur, Shahdara ·</span>
-    <a href="tel:+919205183390" class="underline decoration-[var(--amber)] decoration-2 underline-offset-2 font-semibold hover:text-[var(--amber)] transition-colors">Call 092051 83390</a>
+<div class="bg-gradient-to-r from-[#171106] via-[#221a0a] to-[#171106] border-b border-[var(--line-soft)] relative z-50">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex items-center justify-between gap-4 text-[.72rem] sm:text-xs font-semibold tracking-wide">
+    <span class="inline-flex items-center gap-2 text-[var(--gold-2)]">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+      <span class="hidden sm:inline">Admissions open at Crafted Academy — limited seats this batch</span>
+      <span class="sm:hidden">Academy admissions open</span>
+    </span>
+    <div class="flex items-center gap-5 text-[var(--muted)]">
+      <span class="inline-flex items-center gap-1.5">
+        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
+        Open now · Closes 9:00 PM
+      </span>
+      <a href="tel:+919899896293" class="hidden md:inline-flex items-center gap-1.5 hover:text-[var(--gold-2)] transition-colors">
+        <i data-lucide="phone" class="w-3.5 h-3.5"></i>098998 96293
+      </a>
+    </div>
   </div>
 </div>
 
-<!-- ══════════ NAV ══════════ -->
-<header class="sticky top-0 z-40 bg-[var(--paper)]/95 backdrop-blur border-b-2 border-[var(--ink)]">
-  <div class="max-w-7xl mx-auto px-4 h-[68px] flex items-center justify-between gap-4">
-    <a href="#home" class="flex items-center gap-3 shrink-0">
-      <span class="w-11 h-11 grid place-items-center rounded-xl border-2 border-[var(--ink)] bg-[var(--indigo)] text-white shadow-[3px_3px_0_0_var(--ink)]">
-        <span class="font-hindi font-bold text-lg leading-none pt-[2px]">श्री</span>
+<header id="siteHeader" class="sticky top-0 z-50 transition-all duration-500">
+  <nav class="max-w-7xl mx-auto px-5 h-[74px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 group shrink-0">
+      <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2A2110] to-[#16110A] border border-[var(--line)] flex items-center justify-center text-[var(--gold)] group-hover:rotate-12 transition-transform duration-500">
+        <i data-lucide="scissors" class="w-5 h-5"></i>
       </span>
       <span class="leading-tight">
-        <span class="font-display font-extrabold tracking-tight text-[17px] block">Shriji Tuition Classes</span>
-        <span class="font-hindi text-[13px] text-[var(--ink-soft)] block -mt-[1px]">श्रीजी ट्यूशन क्लासेज</span>
+        <span class="block font-serif-d text-[1.35rem] tracking-tight text-[var(--ivory)]">Crafted</span>
+        <span class="block text-[.58rem] font-extrabold tracking-[.34em] text-[var(--gold)] uppercase">Salon | Academy</span>
       </span>
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-[14.5px] font-semibold">
-      <a href="#why" class="hover:text-[var(--indigo)] transition-colors">Why Us</a>
-      <a href="#courses" class="hover:text-[var(--indigo)] transition-colors">Courses</a>
-      <a href="#mentors" class="hover:text-[var(--indigo)] transition-colors">Mentors</a>
-      <a href="#reviews" class="hover:text-[var(--indigo)] transition-colors">Reviews</a>
-      <a href="#contact" class="hover:text-[var(--indigo)] transition-colors">Contact</a>
-    </nav>
+    <div class="hidden lg:flex items-center gap-9">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#craft" class="nav-link">The Craft</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#visit" class="nav-link">Visit Us</a>
+    </div>
     <div class="flex items-center gap-3">
-      <span class="hidden md:inline-flex items-center gap-1.5 text-sm font-bold bg-[var(--amber)] chip rounded-full px-3 py-1.5">
-        <i data-lucide="star" class="w-4 h-4 fill-[var(--ink)]"></i> 5.0 · 45 reviews
-      </span>
-      <a href="tel:+919205183390" class="hidden sm:inline-flex items-center gap-2 bg-[var(--ink)] text-[var(--paper)] font-semibold text-sm rounded-full px-5 py-2.5 btn-hard">
-        <i data-lucide="phone" class="w-4 h-4"></i> Call Now
+      <a href="tel:+919899896293" class="hidden md:inline-flex btn-ghost px-5 py-2.5 text-sm">
+        <i data-lucide="phone" class="w-4 h-4 text-[var(--gold)]"></i>098998 96293
       </a>
-      <button id="menuBtn" class="lg:hidden w-11 h-11 grid place-items-center rounded-xl border-2 border-[var(--ink)] bg-white shadow-[3px_3px_0_0_var(--ink)]" aria-label="Open menu">
-        <i data-lucide="menu" class="w-5 h-5"></i>
+      <a href="#book" class="btn-gold px-5 py-2.5 text-sm">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">Book on WhatsApp</span><span class="sm:hidden">Book</span>
+      </a>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-xl border border-[var(--line)] flex items-center justify-center text-[var(--ivory)]" aria-label="Menu">
+        <i data-lucide="menu" class="w-5 h-5" id="menuIconOpen"></i>
+        <i data-lucide="x" class="w-5 h-5 hidden" id="menuIconClose"></i>
       </button>
     </div>
-  </div>
-  <div id="mobileMenu" class="hidden lg:hidden border-t-2 border-[var(--ink)] bg-[var(--paper)]">
-    <nav class="px-4 py-4 flex flex-col gap-1 text-[15px] font-semibold">
-      <a href="#why" class="mobile-link px-3 py-2.5 rounded-lg hover:bg-[var(--indigo-soft)]">Why Us</a>
-      <a href="#courses" class="mobile-link px-3 py-2.5 rounded-lg hover:bg-[var(--indigo-soft)]">Courses</a>
-      <a href="#mentors" class="mobile-link px-3 py-2.5 rounded-lg hover:bg-[var(--indigo-soft)]">Mentors</a>
-      <a href="#reviews" class="mobile-link px-3 py-2.5 rounded-lg hover:bg-[var(--indigo-soft)]">Reviews</a>
-      <a href="#contact" class="mobile-link px-3 py-2.5 rounded-lg hover:bg-[var(--indigo-soft)]">Contact</a>
-      <a href="tel:+919205183390" class="mt-2 inline-flex items-center justify-center gap-2 bg-[var(--ink)] text-[var(--paper)] rounded-xl px-5 py-3 btn-hard">
-        <i data-lucide="phone" class="w-4 h-4"></i> Call 092051 83390
-      </a>
-    </nav>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-[var(--line-soft)] glass">
+    <div class="px-6 py-5 flex flex-col gap-1">
+      <a href="#services" class="mob-link py-3 border-b border-[var(--line-soft)] font-semibold text-[var(--muted)] hover:text-[var(--gold-2)] transition-colors">Services</a>
+      <a href="#craft" class="mob-link py-3 border-b border-[var(--line-soft)] font-semibold text-[var(--muted)] hover:text-[var(--gold-2)] transition-colors">The Craft</a>
+      <a href="#reviews" class="mob-link py-3 border-b border-[var(--line-soft)] font-semibold text-[var(--muted)] hover:text-[var(--gold-2)] transition-colors">Reviews</a>
+      <a href="#visit" class="mob-link py-3 font-semibold text-[var(--muted)] hover:text-[var(--gold-2)] transition-colors">Visit Us</a>
+    </div>
   </div>
 </header>
 
-<!-- ══════════ HERO — split-column, tabbed ══════════ -->
-<section id="home" class="relative grid-bg overflow-hidden">
-  <div class="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] rounded-full bg-[var(--amber)]/35 blur-3xl"></div>
-  <div class="pointer-events-none absolute top-40 -right-28 w-[420px] h-[420px] rounded-full bg-[var(--indigo)]/20 blur-3xl"></div>
+<main id="top">
 
-  <div class="relative max-w-7xl mx-auto px-4 pt-10 pb-16 md:pt-16 md:pb-24 grid lg:grid-cols-2 gap-14 lg:gap-8 items-center">
+<section class="relative overflow-hidden">
+  <div class="glow-orb w-[560px] h-[560px] bg-[rgba(217,169,78,.1)] -top-40 -left-40"></div>
+  <div class="glow-orb w-[480px] h-[480px] bg-[rgba(201,127,106,.08)] top-24 right-[-160px]"></div>
+  <div class="max-w-7xl mx-auto px-5 pt-12 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-[1.08fr_.92fr] gap-14 lg:gap-12 items-center relative">
 
-    <!-- LEFT — tab-switcher + headline -->
-    <div>
-      <div class="flex flex-wrap items-center gap-2.5 mb-6 reveal">
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold shadow-[3px_3px_0_0_var(--ink)]">
-          <span class="flex text-[var(--amber-deep)]">
-            <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-          </span>
-          5.0 on Google
+    <div class="relative z-10">
+      <div class="reveal inline-flex items-center gap-2.5 glass-soft rounded-full pl-2 pr-4 py-1.5 mb-7">
+        <span class="inline-flex items-center gap-1 bg-gradient-to-r from-[var(--gold-2)] to-[var(--gold)] text-[#181003] text-xs font-extrabold rounded-full px-2.5 py-1">
+          <i data-lucide="star" class="w-3 h-3 star"></i>4.9
         </span>
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold shadow-[3px_3px_0_0_var(--ink)]">
-          <i data-lucide="badge-check" class="w-4 h-4 text-[var(--indigo)]"></i> Women-owned
-        </span>
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-white px-3.5 py-1.5 text-[13px] font-bold shadow-[3px_3px_0_0_var(--ink)]">
-          <i data-lucide="heart-handshake" class="w-4 h-4 text-[var(--coral)]"></i> LGBTQ+ friendly
-        </span>
+        <span class="text-xs font-semibold text-[var(--muted)]">55 Google reviews · Beauty Parlour · Babarpur, Shahdara</span>
       </div>
 
-      <p class="text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--ink-soft)] mb-3 reveal">I&rsquo;m looking for tuition for</p>
+      <h1 class="reveal font-serif-d font-medium text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[4.35rem] tracking-[-0.02em]" style="transition-delay:.08s">
+        Where Babarpur<br>
+        gets its <em class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-2)] via-[var(--gold)] to-[var(--rose)]">glow</em>.
+      </h1>
 
-      <!-- TAB SWITCHER (pure JS) -->
-      <div class="inline-flex flex-wrap gap-1 rounded-2xl border-2 border-[var(--ink)] bg-white p-1.5 shadow-[4px_4px_0_0_var(--ink)] mb-7 reveal" role="tablist" aria-label="Choose class group">
-        <button class="tab-btn rounded-xl px-4 sm:px-5 py-2.5 text-sm font-bold transition-colors" data-tab="f" role="tab">Class VI–VIII</button>
-        <button class="tab-btn rounded-xl px-4 sm:px-5 py-2.5 text-sm font-bold transition-colors" data-tab="b" role="tab">Class IX–X</button>
-        <button class="tab-btn rounded-xl px-4 sm:px-5 py-2.5 text-sm font-bold transition-colors" data-tab="s" role="tab">Class XI–XII</button>
-      </div>
+      <p class="reveal mt-3 text-sm font-bold tracking-[.24em] uppercase text-[var(--faint)]" lang="hi" style="transition-delay:.14s">क्राफ्टेड सालों | अकैडमी</p>
 
-      <div id="heroSwap" class="reveal">
-        <p id="heroEyebrow" class="font-hindi font-bold text-[var(--indigo)] text-lg mb-2"></p>
-        <h1 id="heroTitle" class="font-display font-extrabold tracking-tight text-[clamp(2.1rem,5.2vw,3.9rem)] leading-[1.04] mb-5"></h1>
-        <p id="heroCopy" class="text-[var(--ink-soft)] text-[16.5px] md:text-lg leading-relaxed max-w-xl mb-6"></p>
-        <div id="heroChips" class="flex flex-wrap gap-2 mb-8"></div>
-      </div>
+      <p class="reveal mt-5 text-[1.05rem] leading-relaxed text-[var(--muted)] max-w-xl" style="transition-delay:.2s">
+        A 4.9-rated unisex salon and training academy on Main Babarpur Road, Shahdara — opposite the M.C.D office. Precision cuts, honest colour advice and hygiene you can actually see, every single visit.
+      </p>
 
-      <div class="flex flex-wrap items-center gap-3.5 reveal">
-        <button id="heroCta" class="enquire-open inline-flex items-center gap-2 bg-[var(--amber)] font-display font-bold rounded-full px-7 py-4 text-[15px] btn-hard">
-          <span id="heroCtaText">Enquire Now</span> <i data-lucide="arrow-right" class="w-4.5 h-4.5"></i>
-        </button>
-        <a href="tel:+919205183390" class="inline-flex items-center gap-2 bg-white font-display font-bold rounded-full px-7 py-4 text-[15px] btn-hard">
-          <i data-lucide="phone" class="w-4.5 h-4.5 text-[var(--indigo)]"></i> 092051 83390
+      <div class="reveal mt-9 flex flex-wrap items-center gap-4" style="transition-delay:.26s">
+        <a href="#book" class="btn-gold px-7 py-4 text-[.95rem]">
+          Book your chair
+          <i data-lucide="arrow-up-right" class="w-4.5 h-4.5"></i>
+        </a>
+        <a href="tel:+919899896293" class="btn-ghost px-7 py-4 text-[.95rem]">
+          <i data-lucide="phone" class="w-4 h-4 text-[var(--gold)]"></i>
+          Call 098998 96293
         </a>
       </div>
 
-      <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13.5px] font-semibold text-[var(--ink-soft)] reveal">
-        <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-[var(--coral)]"></i> Near Maladevi School, Babarpur</span>
-        <span class="inline-flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-[var(--indigo)]"></i> Open till 8:30 PM</span>
-        <span class="inline-flex items-center gap-1.5"><i data-lucide="school" class="w-4 h-4 text-[var(--amber-deep)]"></i> Shahdara, Delhi 110032</span>
+      <div class="reveal mt-11 grid grid-cols-2 sm:grid-cols-4 gap-y-6 max-w-xl" style="transition-delay:.32s">
+        <div class="pr-5 border-r border-[var(--line-soft)]">
+          <p class="font-serif-d text-3xl text-[var(--gold-2)]">4.9<span class="text-lg text-[var(--gold)]">★</span></p>
+          <p class="text-[.7rem] mt-1 font-bold tracking-[.14em] uppercase text-[var(--faint)]">Google rating</p>
+        </div>
+        <div class="px-5 sm:border-r border-[var(--line-soft)]">
+          <p class="font-serif-d text-3xl text-[var(--ivory)]">55</p>
+          <p class="text-[.7rem] mt-1 font-bold tracking-[.14em] uppercase text-[var(--faint)]">Verified reviews</p>
+        </div>
+        <div class="pr-5 border-r border-[var(--line-soft)]">
+          <p class="font-serif-d text-3xl text-[var(--ivory)]">2<span class="text-lg text-[var(--gold)]">in1</span></p>
+          <p class="text-[.7rem] mt-1 font-bold tracking-[.14em] uppercase text-[var(--faint)]">Salon + Academy</p>
+        </div>
+        <div class="sm:pl-5">
+          <p class="font-serif-d text-3xl text-[var(--ivory)]">9<span class="text-lg text-[var(--gold)]">PM</span></p>
+          <p class="text-[.7rem] mt-1 font-bold tracking-[.14em] uppercase text-[var(--faint)]">Open till late</p>
+        </div>
       </div>
     </div>
 
-    <!-- RIGHT — flat-card composition (no photos, pure CSS) -->
-    <div class="relative h-[480px] sm:h-[520px] reveal" aria-hidden="true">
-      <!-- starburst -->
-      <svg class="spin-slow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] text-[var(--indigo-soft)]" viewBox="0 0 200 200" fill="currentColor">
-        <path d="M100 0l10.4 33.2L143 12.7l-8.4 34.4 34.4-8.4-20.5 32.6 33.2 10.4-33.2 10.4 20.5 32.6-34.4-8.4 8.4 34.4-32.6-20.5L100 182l-10.4-33.2L57 169.3l8.4-34.4-34.4 8.4 20.5-32.6L18.3 100l33.2-10.4L31 57l34.4 8.4L57 31l32.6 20.5z" opacity=".9"/>
-      </svg>
-
-      <!-- rating ticket -->
-      <div class="hc absolute left-0 sm:left-2 top-6 w-[240px] sm:w-[262px] p-5 rotate-[-2.5deg] floaty z-10" style="--rot:-2.5deg">
-        <div class="flex items-center justify-between mb-2">
-          <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-[var(--ink-soft)]">Google Rating</span>
-          <i data-lucide="sparkles" class="w-4 h-4 text-[var(--amber-deep)]"></i>
-        </div>
-        <div class="font-display font-extrabold text-6xl tracking-tight leading-none mb-2">5.0</div>
-        <div class="flex text-[var(--amber-deep)] mb-2">
-          <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
-        </div>
-        <p class="text-[13px] font-semibold text-[var(--ink-soft)]">45 reviews — every single one five-star</p>
+    <div class="relative z-10 reveal" style="transition-delay:.18s">
+      <div class="absolute -top-8 -left-8 w-40 h-52 rounded-2xl overflow-hidden border border-[var(--line)] hidden xl:block floaty shadow-2xl rotate-[-6deg]">
+        <img src="https://images.pexels.com/photos/3993330/pexels-photo-3993330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Stylist preparing a client at Crafted Salon" class="w-full h-full object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-[rgba(11,10,8,.55)] to-transparent"></div>
       </div>
 
-      <!-- 98% sticker -->
-      <div class="absolute right-2 sm:right-6 top-2 z-20 floaty" style="--rot:7deg; animation-delay:.6s">
-        <div class="relative w-[128px] h-[128px] sm:w-[148px] sm:h-[148px] rounded-full bg-[var(--amber)] border-2 border-[var(--ink)] shadow-[5px_5px_0_0_var(--ink)] grid place-items-center rotate-[7deg]">
-          <div class="absolute inset-[7px] rounded-full border-2 border-dashed border-[var(--ink)]/50"></div>
-          <div class="text-center leading-tight">
-            <div class="font-display font-extrabold text-3xl sm:text-4xl">98%</div>
-            <div class="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-wide mt-1">Class X boards<br/>student-shared score</div>
+      <div id="book" class="glass rounded-[1.75rem] overflow-hidden relative scroll-mt-32 transition-shadow duration-500">
+        <div class="relative h-28 overflow-hidden">
+          <img src="https://images.pexels.com/photos/8468125/pexels-photo-8468125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Hair colouring with brush and foil technique" class="w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-b from-[rgba(11,10,8,.25)] to-[rgba(20,17,12,.95)]"></div>
+          <span class="absolute bottom-3 left-6 inline-flex items-center gap-1.5 text-[.68rem] font-extrabold tracking-[.22em] uppercase text-[var(--gold-2)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Same-day appointments
+          </span>
+        </div>
+        <div class="p-6 sm:p-8">
+          <h2 class="font-serif-d text-[1.75rem] tracking-tight">Book your chair</h2>
+          <p class="text-sm text-[var(--muted)] mt-1.5">Fill this in — we confirm on WhatsApp within minutes.</p>
+
+          <form id="waForm" class="mt-6 space-y-4" novalidate>
+            <div>
+              <div class="relative">
+                <i data-lucide="user" class="w-[18px] h-[18px] field-icon"></i>
+                <input type="text" id="fName" class="field" placeholder="Your name" autocomplete="name">
+              </div>
+              <p class="err hidden text-xs text-red-400 mt-1.5 pl-1" id="errName">Please enter your name</p>
+            </div>
+            <div>
+              <div class="relative">
+                <i data-lucide="scissors" class="w-[18px] h-[18px] field-icon"></i>
+                <select id="fService" class="field text-[var(--muted)]">
+                  <option value="" disabled selected>Choose a service</option>
+                  <option>Haircut &amp; Styling</option>
+                  <option>Hair Colour / Balayage</option>
+                  <option>Keratin / Hair Spa</option>
+                  <option>Facial / Clean-up</option>
+                  <option>Waxing / Threading</option>
+                  <option>Party / Bridal Makeup</option>
+                  <option>Grooming Package</option>
+                  <option>Academy Course Enquiry</option>
+                </select>
+                <i data-lucide="chevron-down" class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-[var(--faint)] pointer-events-none"></i>
+              </div>
+              <p class="err hidden text-xs text-red-400 mt-1.5 pl-1" id="errService">Please pick a service</p>
+            </div>
+            <div>
+              <div class="relative">
+                <i data-lucide="phone" class="w-[18px] h-[18px] field-icon"></i>
+                <input type="tel" id="fPhone" class="field" placeholder="Your phone / WhatsApp number" autocomplete="tel">
+              </div>
+              <p class="err hidden text-xs text-red-400 mt-1.5 pl-1" id="errPhone">Enter a valid 10-digit number</p>
+            </div>
+            <button type="submit" id="waSubmit" class="btn-gold w-full py-4 text-[.95rem]">
+              <i data-lucide="message-circle" class="w-[18px] h-[18px]"></i>
+              <span id="waSubmitLabel">Send booking request</span>
+            </button>
+            <p id="waStatus" class="hidden text-xs text-center text-[var(--muted)]">
+              Didn't open? <a id="waFallback" href="#" target="_blank" rel="noopener" class="text-[var(--gold-2)] font-bold underline underline-offset-2">Tap here to continue on WhatsApp</a>
+            </p>
+          </form>
+
+          <div class="mt-6 pt-5 border-t border-[var(--line-soft)] flex items-center justify-center gap-6 text-[.7rem] font-bold tracking-wide text-[var(--faint)]">
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-[var(--gold)]"></i>Hygiene-first</span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="badge-check" class="w-3.5 h-3.5 text-[var(--gold)]"></i>Trained stylists</span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-[var(--gold)]"></i>Till 9 PM</span>
           </div>
         </div>
-      </div>
-
-      <!-- address card -->
-      <div class="hc absolute right-0 bottom-24 sm:bottom-20 w-[248px] sm:w-[272px] p-5 rotate-[2deg] floaty z-10" style="--rot:2deg; animation-delay:1.1s">
-        <div class="w-10 h-10 grid place-items-center rounded-xl bg-[var(--coral)] border-2 border-[var(--ink)] mb-3">
-          <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
-        </div>
-        <p class="text-[13.5px] font-semibold leading-snug">1000-E, Lohiya Gali 04, Babarpur, near Maladevi School, Shahdara, Delhi — 110032</p>
-        <p class="text-[12px] font-bold text-[var(--ink-soft)] mt-2 inline-flex items-center gap-1"><i data-lucide="navigation" class="w-3.5 h-3.5"></i> Plus code: M7QJ+M7 Delhi</p>
-      </div>
-
-      <!-- hours pill -->
-      <div class="absolute left-4 sm:left-10 bottom-16 sm:bottom-24 rotate-[-3deg] floaty z-20" style="--rot:-3deg; animation-delay:1.6s">
-        <div class="bg-[var(--ink)] text-[var(--paper)] rounded-full px-5 py-3 border-2 border-[var(--ink)] shadow-[4px_4px_0_0_rgba(23,22,48,.35)] inline-flex items-center gap-2.5">
-          <span class="relative flex h-2.5 w-2.5"><span class="absolute inline-flex h-full w-full rounded-full bg-[var(--mint)] opacity-75 animate-ping"></span><span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--mint)]"></span></span>
-          <span class="text-sm font-bold">Open · Closes 8:30 PM</span>
-        </div>
-      </div>
-
-      <!-- hindi tag -->
-      <div class="absolute left-8 sm:left-16 bottom-0 rotate-[1.5deg] floaty z-10" style="--rot:1.5deg; animation-delay:2.1s">
-        <div class="bg-white border-2 border-[var(--ink)] rounded-2xl px-5 py-3 shadow-[4px_4px_0_0_var(--ink)]">
-          <span class="font-hindi font-bold text-lg">पढ़ाई, जहाँ समझ आए</span>
-        </div>
-      </div>
-
-      <!-- floating pencil icon -->
-      <div class="absolute right-16 top-44 sm:top-48 w-12 h-12 grid place-items-center rounded-xl bg-[var(--indigo)] border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)] rotate-[10deg] floaty z-0" style="--rot:10deg; animation-delay:.3s">
-        <i data-lucide="pencil-ruler" class="w-5.5 h-5.5 text-white"></i>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ MARQUEE ══════════ -->
-<div class="bg-[var(--indigo)] border-y-2 border-[var(--ink)] py-3.5 overflow-hidden" aria-hidden="true">
-  <div class="marquee-track text-white font-display font-bold text-[15px] tracking-wide">
-    <div class="flex items-center gap-8 pr-8 shrink-0">
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> श्रीजी ट्यूशन क्लासेज</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> CLASSES VI–XII</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> MATHS · SCIENCE · ENGLISH · SST</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> 5.0★ GOOGLE RATED</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> BOARD EXAM PREP</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> EVENING BATCHES TILL 8:30 PM</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> BABARPUR · SHAHDARA</span>
+<div class="border-y border-[var(--line-soft)] bg-[rgba(20,17,12,.5)] overflow-hidden py-4 select-none">
+  <div class="marquee-track items-center gap-10 text-[.72rem] font-extrabold tracking-[.3em] uppercase text-[var(--faint)]">
+    <div class="flex items-center gap-10 shrink-0 pr-10" id="marqueeSet">
+      <span>Precision Cuts</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Hair Colour &amp; Balayage</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Keratin &amp; Hair Spa</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Facials &amp; Clean-ups</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Waxing &amp; Threading</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Party Makeup</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Academy Courses</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+      <span>Grooming</span><i data-lucide="scissors" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
     </div>
-    <div class="flex items-center gap-8 pr-8 shrink-0">
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> श्रीजी ट्यूशन क्लासेज</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> CLASSES VI–XII</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> MATHS · SCIENCE · ENGLISH · SST</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> 5.0★ GOOGLE RATED</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> BOARD EXAM PREP</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> EVENING BATCHES TILL 8:30 PM</span>
-      <span class="flex items-center gap-8"><i data-lucide="asterisk" class="w-4 h-4 text-[var(--amber)]"></i> BABARPUR · SHAHDARA</span>
-    </div>
+    <div class="flex items-center gap-10 shrink-0 pr-10" aria-hidden="true" id="marqueeClone"></div>
   </div>
 </div>
 
-<!-- ══════════ WHY US — built from verified review themes ══════════ -->
-<section id="why" class="max-w-7xl mx-auto px-4 py-16 md:py-24 scroll-mt-24">
-  <div class="max-w-2xl mb-12 reveal">
-    <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--amber)] px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider shadow-[3px_3px_0_0_var(--ink)] mb-4">
-      <i data-lucide="quote" class="w-3.5 h-3.5"></i> Straight from Google reviews
-    </span>
-    <h2 class="font-display font-extrabold tracking-tight text-[clamp(1.8rem,4vw,2.9rem)] leading-tight">Why students <mark class="hl">love studying</mark> here</h2>
-    <p class="text-[var(--ink-soft)] mt-4 text-[16.5px] leading-relaxed">No claims written by us — every point below is something a student or parent actually wrote in a verified Google review.</p>
-  </div>
-
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-    <div class="hc hc-hover p-6 reveal">
-      <div class="w-12 h-12 grid place-items-center rounded-xl bg-[var(--indigo)] border-2 border-[var(--ink)] mb-5"><i data-lucide="brain" class="w-6 h-6 text-white"></i></div>
-      <h3 class="font-display font-bold text-lg mb-2.5">Intellectual way of teaching</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed">&ldquo;The best and very intellectual way of teaching.&rdquo;</p>
-      <p class="text-[12px] font-bold text-[var(--amber-deep)] mt-3 uppercase tracking-wide">— Google review</p>
-    </div>
-    <div class="hc hc-hover p-6 reveal" style="transition-delay:.06s">
-      <div class="w-12 h-12 grid place-items-center rounded-xl bg-[var(--coral)] border-2 border-[var(--ink)] mb-5"><i data-lucide="smile" class="w-6 h-6 text-white"></i></div>
-      <h3 class="font-display font-bold text-lg mb-2.5">Friendly Ma&rsquo;am &amp; Sir</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed">&ldquo;Teaching is very smooth with mam and Sir and are very friendly.&rdquo;</p>
-      <p class="text-[12px] font-bold text-[var(--amber-deep)] mt-3 uppercase tracking-wide">— Google review</p>
-    </div>
-    <div class="hc hc-hover p-6 reveal" style="transition-delay:.12s">
-      <div class="w-12 h-12 grid place-items-center rounded-xl bg-[var(--amber)] border-2 border-[var(--ink)] mb-5"><i data-lucide="notebook-pen" class="w-6 h-6"></i></div>
-      <h3 class="font-display font-bold text-lg mb-2.5">Comprehensive materials</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed">&ldquo;Quality education with excellent instructors and comprehensive materials.&rdquo;</p>
-      <p class="text-[12px] font-bold text-[var(--amber-deep)] mt-3 uppercase tracking-wide">— Google review</p>
-    </div>
-    <div class="hc hc-hover p-6 reveal" style="transition-delay:.18s">
-      <div class="w-12 h-12 grid place-items-center rounded-xl bg-[var(--mint)] border-2 border-[var(--ink)] mb-5"><i data-lucide="trophy" class="w-6 h-6"></i></div>
-      <h3 class="font-display font-bold text-lg mb-2.5">Real board results</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed">&ldquo;Completed my 10th class coaching from here, got 98%.&rdquo;</p>
-      <p class="text-[12px] font-bold text-[var(--amber-deep)] mt-3 uppercase tracking-wide">— Google review</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ COURSES — comparison table → stacked cards on mobile ══════════ -->
-<section id="courses" class="border-y-2 border-[var(--ink)] bg-[var(--indigo-soft)]/60 grid-bg scroll-mt-14">
-  <div class="max-w-7xl mx-auto px-4 py-16 md:py-24">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-10 reveal">
-      <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-white px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider shadow-[3px_3px_0_0_var(--ink)] mb-4">
-          <i data-lucide="list-checks" class="w-3.5 h-3.5 text-[var(--indigo)]"></i> Batches &amp; courses
-        </span>
-        <h2 class="font-display font-extrabold tracking-tight text-[clamp(1.8rem,4vw,2.9rem)] leading-tight">Pick your batch, <mark class="hl">compare side by side</mark></h2>
-      </div>
-      <p class="text-[14px] font-semibold text-[var(--ink-soft)] flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-[var(--indigo)]"></i> Evening slots available — classes run till 8:30 PM</p>
+<section id="services" class="relative py-24 lg:py-32 scroll-mt-20">
+  <div class="glow-orb w-[500px] h-[500px] bg-[rgba(217,169,78,.06)] top-40 right-[-200px]"></div>
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl reveal">
+      <span class="eyebrow">The menu</span>
+      <h2 class="font-serif-d text-4xl sm:text-5xl tracking-[-0.02em] mt-4 leading-[1.05]">Three crafts.<br>One <em class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-2)] to-[var(--gold)]">chair</em>.</h2>
+      <p class="text-[var(--muted)] mt-5 leading-relaxed">Everything under one roof on Main Babarpur Road — cuts, colour, skin rituals, and a full academy that trains the next generation of stylists.</p>
     </div>
 
-    <!-- table head (desktop) -->
-    <div class="hidden md:grid grid-cols-12 gap-4 px-6 pb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-[var(--ink-soft)] reveal">
-      <div class="col-span-4">Course / Batch</div>
-      <div class="col-span-2">Duration</div>
-      <div class="col-span-2">Mode</div>
-      <div class="col-span-2">Fee</div>
-      <div class="col-span-2 text-right">Admissions</div>
-    </div>
+    <div class="grid md:grid-cols-3 gap-6 mt-14">
 
-    <div class="flex flex-col gap-4">
-      <!-- row 1 -->
-      <div class="hc hc-hover reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center p-5 md:px-6">
-        <div class="md:col-span-4">
-          <p class="font-display font-bold text-[17px]">Foundation Batch</p>
-          <p class="text-[13px] text-[var(--ink-soft)] font-medium mt-0.5">Class VI–VIII · All subjects</p>
+      <article class="reveal glass card-lift rounded-3xl overflow-hidden flex flex-col" style="transition-delay:.05s">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.pexels.com/photos/29555682/pexels-photo-29555682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Hair colouring session with foils" class="img-zoom w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(20,17,12,.95)] via-transparent to-transparent"></div>
+          <span class="absolute top-4 left-4 chip glass-soft !text-[var(--gold-2)] !border-[rgba(217,169,78,.35)] text-[.65rem] tracking-[.18em] uppercase">Most loved</span>
+          <span class="absolute bottom-3 right-5 font-serif-d italic text-5xl text-[rgba(244,236,219,.22)]">01</span>
         </div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Duration</span>Full session</div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Mode</span><span class="inline-flex items-center gap-1.5"><i data-lucide="school" class="w-4 h-4 text-[var(--indigo)]"></i>Offline · Centre</span></div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Fee</span>On enquiry</div>
-        <div class="md:col-span-2 md:text-right pt-1 md:pt-0">
-          <button class="enquire-open w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[var(--ink)] text-[var(--paper)] text-sm font-bold rounded-full px-5 py-2.5 btn-hard" data-course="Foundation Batch (Class VI–VIII)">Enquire <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
-        </div>
-      </div>
-
-      <!-- row 2 — featured -->
-      <div class="hc hc-hover reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center p-5 md:px-6 relative bg-[var(--amber)]/25">
-        <span class="absolute -top-3 left-5 chip bg-[var(--amber)] rounded-full px-3 py-0.5 text-[11px] font-extrabold uppercase tracking-wider">Most popular</span>
-        <div class="md:col-span-4">
-          <p class="font-display font-bold text-[17px]">Board Batch</p>
-          <p class="text-[13px] text-[var(--ink-soft)] font-medium mt-0.5">Class IX–X · Maths, Science, SST, English</p>
-        </div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Duration</span>Full session</div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Mode</span><span class="inline-flex items-center gap-1.5"><i data-lucide="school" class="w-4 h-4 text-[var(--indigo)]"></i>Offline · Centre</span></div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Fee</span>On enquiry</div>
-        <div class="md:col-span-2 md:text-right pt-1 md:pt-0">
-          <button class="enquire-open w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[var(--ink)] text-[var(--paper)] text-sm font-bold rounded-full px-5 py-2.5 btn-hard" data-course="Board Batch (Class IX–X)">Enquire <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
-        </div>
-      </div>
-
-      <!-- row 3 -->
-      <div class="hc hc-hover reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center p-5 md:px-6">
-        <div class="md:col-span-4">
-          <p class="font-display font-bold text-[17px]">Senior Batch</p>
-          <p class="text-[13px] text-[var(--ink-soft)] font-medium mt-0.5">Class XI–XII · Science &amp; Maths</p>
-        </div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Duration</span>Full session</div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Mode</span><span class="inline-flex items-center gap-1.5"><i data-lucide="school" class="w-4 h-4 text-[var(--indigo)]"></i>Offline · Centre</span></div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Fee</span>On enquiry</div>
-        <div class="md:col-span-2 md:text-right pt-1 md:pt-0">
-          <button class="enquire-open w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[var(--ink)] text-[var(--paper)] text-sm font-bold rounded-full px-5 py-2.5 btn-hard" data-course="Senior Batch (Class XI–XII)">Enquire <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
-        </div>
-      </div>
-
-      <!-- row 4 -->
-      <div class="hc hc-hover reveal grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-4 items-center p-5 md:px-6">
-        <div class="md:col-span-4">
-          <p class="font-display font-bold text-[17px]">Board Booster</p>
-          <p class="text-[13px] text-[var(--ink-soft)] font-medium mt-0.5">Class X · Revision + test series</p>
-        </div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Duration</span>Till board exams</div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Mode</span><span class="inline-flex items-center gap-1.5"><i data-lucide="school" class="w-4 h-4 text-[var(--indigo)]"></i>Offline · Centre</span></div>
-        <div class="md:col-span-2 text-[14px] font-semibold"><span class="md:hidden text-[11px] font-bold uppercase tracking-wider text-[var(--ink-soft)] block">Fee</span>On enquiry</div>
-        <div class="md:col-span-2 md:text-right pt-1 md:pt-0">
-          <button class="enquire-open w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[var(--ink)] text-[var(--paper)] text-sm font-bold rounded-full px-5 py-2.5 btn-hard" data-course="Board Booster (Class X revision)">Enquire <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <p class="mt-6 text-[13.5px] font-medium text-[var(--ink-soft)] flex items-start gap-2 reveal">
-      <i data-lucide="info" class="w-4 h-4 mt-[1px] shrink-0 text-[var(--indigo)]"></i>
-      Fees depend on class &amp; subjects. Call <a href="tel:+919205183390" class="font-bold underline decoration-[var(--amber)] decoration-2 underline-offset-2">092051 83390</a> for the current fee structure and batch timings.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════ RESULTS STRIP — dark stat band ══════════ -->
-<section id="results" class="bg-[var(--ink)] text-[var(--paper)] grid-bg-dark border-b-2 border-[var(--ink)]">
-  <div class="max-w-7xl mx-auto px-4 py-16 md:py-20">
-    <p class="text-center text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--amber)] mb-10 reveal">Numbers that speak louder than promises</p>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6">
-      <div class="text-center reveal">
-        <div class="font-display font-extrabold tracking-tight text-6xl md:text-7xl text-[var(--amber)] tabular-nums">5.0</div>
-        <div class="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--paper)]/70">Google rating</div>
-      </div>
-      <div class="text-center reveal" style="transition-delay:.07s">
-        <div class="font-display font-extrabold tracking-tight text-6xl md:text-7xl text-[var(--amber)] tabular-nums">45</div>
-        <div class="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--paper)]/70">Google reviews</div>
-      </div>
-      <div class="text-center reveal" style="transition-delay:.14s">
-        <div class="font-display font-extrabold tracking-tight text-6xl md:text-7xl text-[var(--amber)] tabular-nums">98<span class="text-4xl md:text-5xl align-top">%</span></div>
-        <div class="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--paper)]/70">Class X top score</div>
-      </div>
-      <div class="text-center reveal" style="transition-delay:.21s">
-        <div class="font-display font-extrabold tracking-tight text-6xl md:text-7xl text-[var(--amber)] tabular-nums">100<span class="text-4xl md:text-5xl align-top">%</span></div>
-        <div class="mt-3 text-[13px] font-bold uppercase tracking-[0.14em] text-[var(--paper)]/70">Reviews rated 5★</div>
-      </div>
-    </div>
-    <p class="text-center text-[12.5px] text-[var(--paper)]/50 font-medium mt-12 max-w-xl mx-auto reveal">Rating &amp; review count from the institute&rsquo;s Google Business profile. 98% as shared by a Class X student in their review.</p>
-  </div>
-</section>
-
-<!-- ══════════ MENTORS — icon-avatar subject desks, scroll-snap row ══════════ -->
-<section id="mentors" class="max-w-7xl mx-auto px-4 py-16 md:py-24 scroll-mt-24">
-  <div class="flex flex-wrap items-end justify-between gap-6 mb-4 reveal">
-    <div class="max-w-2xl">
-      <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--coral)] text-white px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider shadow-[3px_3px_0_0_var(--ink)] mb-4">
-        <i data-lucide="users" class="w-3.5 h-3.5"></i> Your mentors
-      </span>
-      <h2 class="font-display font-extrabold tracking-tight text-[clamp(1.8rem,4vw,2.9rem)] leading-tight">Taught personally by the teachers students call <mark class="hl">&ldquo;Ma&rsquo;am &amp; Sir&rdquo;</mark></h2>
-    </div>
-    <div class="hidden md:flex gap-2.5">
-      <button id="mentorPrev" class="w-12 h-12 grid place-items-center rounded-full bg-white btn-hard" aria-label="Scroll mentors left"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-      <button id="mentorNext" class="w-12 h-12 grid place-items-center rounded-full bg-[var(--amber)] btn-hard" aria-label="Scroll mentors right"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
-    </div>
-  </div>
-  <p class="text-[var(--ink-soft)] text-[15.5px] max-w-2xl mb-10 reveal">Reviewers praise the teaching duo by name — &ldquo;mam and Sir&rdquo; — across Google reviews. Every subject below is handled at the centre&rsquo;s own faculty desks.</p>
-
-  <div id="mentorRow" class="snap-row flex gap-5 overflow-x-auto pb-4 -mx-4 px-4">
-    <!-- card 1 -->
-    <article class="hc hc-hover min-w-[272px] sm:min-w-[312px] p-6 flex flex-col reveal">
-      <div class="flex items-start justify-between mb-6">
-        <div class="w-14 h-14 grid place-items-center rounded-2xl bg-[var(--indigo)] border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)]"><i data-lucide="calculator" class="w-7 h-7 text-white"></i></div>
-        <span class="chip rounded-full bg-[var(--indigo-soft)] px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide">Class VI–XII</span>
-      </div>
-      <h3 class="font-display font-bold text-xl mb-2">Mathematics</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed mb-5">Concept-first problem solving — from number systems to board-level trigonometry.</p>
-      <ul class="text-[13.5px] font-semibold flex flex-col gap-2 mb-6">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Number system &amp; algebra</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Geometry &amp; mensuration</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Trigonometry &amp; beyond</li>
-      </ul>
-      <div class="mt-auto pt-4 border-t-2 border-dashed border-[var(--ink)]/20 text-[12.5px] font-bold text-[var(--ink-soft)] flex items-center gap-1.5"><i data-lucide="message-circle-question" class="w-4 h-4 text-[var(--coral)]"></i>Doubt-clearing till 8:30 PM</div>
-    </article>
-
-    <!-- card 2 -->
-    <article class="hc hc-hover min-w-[272px] sm:min-w-[312px] p-6 flex flex-col reveal" style="transition-delay:.05s">
-      <div class="flex items-start justify-between mb-6">
-        <div class="w-14 h-14 grid place-items-center rounded-2xl bg-[var(--mint)] border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)]"><i data-lucide="flask-conical" class="w-7 h-7"></i></div>
-        <span class="chip rounded-full bg-[var(--mint)]/20 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide">Class VI–XII</span>
-      </div>
-      <h3 class="font-display font-bold text-xl mb-2">Science</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed mb-5">Physics, Chemistry &amp; Biology with diagrams, everyday examples and regular tests.</p>
-      <ul class="text-[13.5px] font-semibold flex flex-col gap-2 mb-6">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Physics &amp; chemistry concepts</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Biology with diagrams</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Numericals &amp; derivations</li>
-      </ul>
-      <div class="mt-auto pt-4 border-t-2 border-dashed border-[var(--ink)]/20 text-[12.5px] font-bold text-[var(--ink-soft)] flex items-center gap-1.5"><i data-lucide="message-circle-question" class="w-4 h-4 text-[var(--coral)]"></i>Doubt-clearing till 8:30 PM</div>
-    </article>
-
-    <!-- card 3 -->
-    <article class="hc hc-hover min-w-[272px] sm:min-w-[312px] p-6 flex flex-col reveal" style="transition-delay:.1s">
-      <div class="flex items-start justify-between mb-6">
-        <div class="w-14 h-14 grid place-items-center rounded-2xl bg-[var(--amber)] border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)]"><i data-lucide="book-open" class="w-7 h-7"></i></div>
-        <span class="chip rounded-full bg-[var(--amber)]/25 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide">Class VI–X</span>
-      </div>
-      <h3 class="font-display font-bold text-xl mb-2">English</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed mb-5">Grammar, writing skills and literature — made simple enough to score.</p>
-      <ul class="text-[13.5px] font-semibold flex flex-col gap-2 mb-6">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Grammar foundations</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Writing &amp; answer formats</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Literature Q&amp;A practice</li>
-      </ul>
-      <div class="mt-auto pt-4 border-t-2 border-dashed border-[var(--ink)]/20 text-[12.5px] font-bold text-[var(--ink-soft)] flex items-center gap-1.5"><i data-lucide="message-circle-question" class="w-4 h-4 text-[var(--coral)]"></i>Doubt-clearing till 8:30 PM</div>
-    </article>
-
-    <!-- card 4 -->
-    <article class="hc hc-hover min-w-[272px] sm:min-w-[312px] p-6 flex flex-col reveal" style="transition-delay:.15s">
-      <div class="flex items-start justify-between mb-6">
-        <div class="w-14 h-14 grid place-items-center rounded-2xl bg-[var(--coral)] border-2 border-[var(--ink)] shadow-[3px_3px_0_0_var(--ink)]"><i data-lucide="globe" class="w-7 h-7 text-white"></i></div>
-        <span class="chip rounded-full bg-[var(--coral)]/15 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide">Class VI–X</span>
-      </div>
-      <h3 class="font-display font-bold text-xl mb-2">Social Science</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed mb-5">History, Civics, Geography &amp; Economics with maps, timelines and mnemonics.</p>
-      <ul class="text-[13.5px] font-semibold flex flex-col gap-2 mb-6">
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>History &amp; civics</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Geography with maps</li>
-        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[var(--indigo)]"></i>Economics basics</li>
-      </ul>
-      <div class="mt-auto pt-4 border-t-2 border-dashed border-[var(--ink)]/20 text-[12.5px] font-bold text-[var(--ink-soft)] flex items-center gap-1.5"><i data-lucide="message-circle-question" class="w-4 h-4 text-[var(--coral)]"></i>Doubt-clearing till 8:30 PM</div>
-    </article>
-
-    <!-- CTA card at the end of row -->
-    <article class="min-w-[272px] sm:min-w-[312px] p-6 flex flex-col justify-between rounded-[1.25rem] border-2 border-dashed border-[var(--ink)]/40 bg-transparent reveal" style="transition-delay:.2s">
-      <div>
-        <div class="w-14 h-14 grid place-items-center rounded-2xl bg-[var(--ink)] mb-6"><i data-lucide="graduation-cap" class="w-7 h-7 text-[var(--amber)]"></i></div>
-        <h3 class="font-display font-bold text-xl mb-2">Meet them in person</h3>
-        <p class="text-[14px] text-[var(--ink-soft)] leading-relaxed">Walk in any evening before 8:30 PM — the centre is 2 minutes from Maladevi School, Babarpur.</p>
-      </div>
-      <button class="enquire-open mt-6 inline-flex items-center justify-center gap-2 bg-[var(--ink)] text-[var(--paper)] font-bold text-sm rounded-full px-5 py-3 btn-hard" data-course="Not sure yet — need guidance">Book a visit <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
-    </article>
-  </div>
-</section>
-
-<!-- ══════════ REVIEWS ══════════ -->
-<section id="reviews" class="border-y-2 border-[var(--ink)] bg-white scroll-mt-14">
-  <div class="max-w-7xl mx-auto px-4 py-16 md:py-24">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-10 reveal">
-      <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--amber)] px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider shadow-[3px_3px_0_0_var(--ink)] mb-4">
-          <i data-lucide="star" class="w-3.5 h-3.5 fill-[var(--ink)]"></i> 5.0 · 45 reviews
-        </span>
-        <h2 class="font-display font-extrabold tracking-tight text-[clamp(1.8rem,4vw,2.9rem)] leading-tight">What <mark class="hl">45 five-star reviews</mark> actually say</h2>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="chip rounded-full bg-[var(--indigo-soft)] px-3.5 py-1.5 text-[12.5px] font-bold">teachers ×4</span>
-        <span class="chip rounded-full bg-[var(--amber)]/30 px-3.5 py-1.5 text-[12.5px] font-bold">tuition ×4</span>
-        <span class="chip rounded-full bg-[var(--mint)]/25 px-3.5 py-1.5 text-[12.5px] font-bold">education ×2</span>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-5">
-      <!-- review 1 -->
-      <figure class="hc hc-hover p-6 flex flex-col reveal">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex text-[var(--amber-deep)]">
-            <i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="scissors" class="w-4 h-4"></i></span>
+            <h3 class="font-serif-d text-[1.45rem] tracking-tight">Hair Design &amp; Colour</h3>
           </div>
-          <i data-lucide="quote" class="w-6 h-6 text-[var(--indigo)]/30"></i>
+          <ul class="mt-5 space-y-2.5 text-sm text-[var(--muted)] flex-1">
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Precision cuts &amp; styling</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Global colour, balayage &amp; highlights</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Keratin, smoothening &amp; hair spa</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Free, honest colour consultation</li>
+          </ul>
+          <button data-service="Hair Colour / Balayage" class="service-book btn-ghost w-full mt-7 py-3.5 text-sm group">
+            Book this service <i data-lucide="arrow-right" class="w-4 h-4 text-[var(--gold)] group-hover:translate-x-1 transition-transform"></i>
+          </button>
         </div>
-        <blockquote class="text-[15px] leading-relaxed text-[var(--ink)]/90 mb-6">&ldquo;The best and very intellectual way of teaching. Teaching is very smooth with mam and Sir and are very friendly. Personal experience — completed my 10th class coaching from here, got 98%.&rdquo;</blockquote>
-        <figcaption class="mt-auto flex items-center gap-3 pt-4 border-t-2 border-dashed border-[var(--ink)]/20">
-          <span class="w-10 h-10 grid place-items-center rounded-full bg-[var(--indigo)] text-white font-display font-bold border-2 border-[var(--ink)]">P</span>
-          <span>
-            <span class="block font-bold text-[14px]">Pratiyush Rana</span>
-            <span class="block text-[12px] font-semibold text-[var(--ink-soft)]">Local Guide · 28 reviews · 2 years ago</span>
-          </span>
-        </figcaption>
-      </figure>
+      </article>
 
-      <!-- review 2 -->
-      <figure class="hc hc-hover p-6 flex flex-col reveal" style="transition-delay:.07s">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex text-[var(--amber-deep)]">
-            <i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i>
+      <article class="reveal glass card-lift rounded-3xl overflow-hidden flex flex-col" style="transition-delay:.15s">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.pexels.com/photos/8558246/pexels-photo-8558246.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Professional makeup application with brushes" class="img-zoom w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(20,17,12,.95)] via-transparent to-transparent"></div>
+          <span class="absolute bottom-3 right-5 font-serif-d italic text-5xl text-[rgba(244,236,219,.22)]">02</span>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+            <h3 class="font-serif-d text-[1.45rem] tracking-tight">Beauty &amp; Grooming</h3>
           </div>
-          <i data-lucide="quote" class="w-6 h-6 text-[var(--indigo)]/30"></i>
+          <ul class="mt-5 space-y-2.5 text-sm text-[var(--muted)] flex-1">
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Facials, clean-ups &amp; de-tan rituals</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Waxing &amp; threading</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Party &amp; occasion makeup</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Men's grooming packages</li>
+          </ul>
+          <button data-service="Facial / Clean-up" class="service-book btn-ghost w-full mt-7 py-3.5 text-sm group">
+            Book this service <i data-lucide="arrow-right" class="w-4 h-4 text-[var(--gold)] group-hover:translate-x-1 transition-transform"></i>
+          </button>
         </div>
-        <blockquote class="text-[15px] leading-relaxed text-[var(--ink)]/90 mb-6">&ldquo;This institute delivers quality education with excellent instructors and comprehensive materials. Highly recommended!&rdquo;</blockquote>
-        <figcaption class="mt-auto flex items-center gap-3 pt-4 border-t-2 border-dashed border-[var(--ink)]/20">
-          <span class="w-10 h-10 grid place-items-center rounded-full bg-[var(--amber)] font-display font-bold border-2 border-[var(--ink)]">F</span>
-          <span>
-            <span class="block font-bold text-[14px]">Fardeen Khan</span>
-            <span class="block text-[12px] font-semibold text-[var(--ink-soft)]">2 reviews · 2 years ago</span>
-          </span>
-        </figcaption>
-      </figure>
+      </article>
 
-      <!-- review 3 -->
-      <figure class="hc hc-hover p-6 flex flex-col reveal" style="transition-delay:.14s">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex text-[var(--amber-deep)]">
-            <i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i><i data-lucide="star" class="w-4.5 h-4.5 fill-current"></i>
+      <article class="reveal glass card-lift rounded-3xl overflow-hidden flex flex-col" style="transition-delay:.25s">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.pexels.com/photos/17320163/pexels-photo-17320163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Practice mannequin head used in academy training" class="img-zoom w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[rgba(20,17,12,.95)] via-transparent to-transparent"></div>
+          <span class="absolute top-4 left-4 chip glass-soft !text-[var(--gold-2)] !border-[rgba(217,169,78,.35)] text-[.65rem] tracking-[.18em] uppercase">Enrolling now</span>
+          <span class="absolute bottom-3 right-5 font-serif-d italic text-5xl text-[rgba(244,236,219,.22)]">03</span>
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="graduation-cap" class="w-4 h-4"></i></span>
+            <h3 class="font-serif-d text-[1.45rem] tracking-tight">The Academy</h3>
           </div>
-          <i data-lucide="quote" class="w-6 h-6 text-[var(--indigo)]/30"></i>
+          <ul class="mt-5 space-y-2.5 text-sm text-[var(--muted)] flex-1">
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Certificate hair &amp; beauty courses</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Hands-on practice with live models</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Small batches, personal mentorship</li>
+            <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-[var(--gold)] shrink-0"></i>Career &amp; placement guidance</li>
+          </ul>
+          <button data-service="Academy Course Enquiry" class="service-book btn-ghost w-full mt-7 py-3.5 text-sm group">
+            Ask about admissions <i data-lucide="arrow-right" class="w-4 h-4 text-[var(--gold)] group-hover:translate-x-1 transition-transform"></i>
+          </button>
         </div>
-        <blockquote class="text-[15px] leading-relaxed text-[var(--ink)]/90 mb-6">&ldquo;Best tuition ever.&rdquo;</blockquote>
-        <figcaption class="mt-auto flex items-center gap-3 pt-4 border-t-2 border-dashed border-[var(--ink)]/20">
-          <span class="w-10 h-10 grid place-items-center rounded-full bg-[var(--mint)] font-display font-bold border-2 border-[var(--ink)]">B</span>
-          <span>
-            <span class="block font-bold text-[14px]">black bondu</span>
-            <span class="block text-[12px] font-semibold text-[var(--ink-soft)]">1 review · 2 months ago</span>
-          </span>
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="mt-8 flex flex-wrap items-center gap-4 reveal">
-      <a href="https://www.google.com/maps/search/?api=1&query=Shriji+Tuition+Classes+Babarpur+Shahdara+Delhi+110032" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-white font-display font-bold rounded-full px-6 py-3.5 text-[14.5px] btn-hard">
-        <i data-lucide="external-link" class="w-4 h-4 text-[var(--indigo)]"></i> Read all 45 reviews on Google
-      </a>
-      <span class="text-[13.5px] font-semibold text-[var(--ink-soft)] inline-flex items-center gap-1.5"><i data-lucide="badge-check" class="w-4 h-4 text-[var(--mint)]"></i> 42 more five-star reviews on the Google profile</span>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ══════════ LOCATION & CONTACT ══════════ -->
-<section id="contact" class="max-w-7xl mx-auto px-4 py-16 md:py-24 scroll-mt-24 grid-bg">
-  <div class="grid lg:grid-cols-2 gap-10 items-stretch">
-    <div class="hc p-7 md:p-9 reveal flex flex-col">
-      <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--amber)] px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider shadow-[3px_3px_0_0_var(--ink)] mb-6 self-start">
-        <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Find us
-      </span>
-      <h2 class="font-display font-extrabold tracking-tight text-[clamp(1.7rem,3.4vw,2.5rem)] leading-tight mb-6">Two minutes from <mark class="hl">Maladevi School</mark></h2>
-      <address class="not-italic flex flex-col gap-5 text-[15.5px] leading-relaxed">
-        <p class="flex gap-3"><i data-lucide="home" class="w-5 h-5 mt-[3px] shrink-0 text-[var(--indigo)]"></i><span><strong>Shriji Tuition Classes</strong> <span class="font-hindi text-[var(--ink-soft)]">(श्रीजी ट्यूशन क्लासेज)</span><br/>1000-E, Lohiya Gali 04, Babarpur,<br/>near Maladevi School, Shahdara,<br/>Delhi — 110032</span></p>
-        <p class="flex gap-3 items-center"><i data-lucide="navigation" class="w-5 h-5 shrink-0 text-[var(--coral)]"></i><span><strong>Plus code:</strong> M7QJ+M7 Delhi</span></p>
-        <p class="flex gap-3 items-center"><i data-lucide="clock" class="w-5 h-5 shrink-0 text-[var(--amber-deep)]"></i><span><strong>Hours:</strong> Open · Closes 8:30 PM</span></p>
-        <p class="flex gap-3 items-center"><i data-lucide="phone" class="w-5 h-5 shrink-0 text-[var(--mint)]"></i><a href="tel:+919205183390" class="font-bold underline decoration-[var(--amber)] decoration-2 underline-offset-2">092051 83390</a></p>
-      </address>
-      <div class="mt-auto pt-7 flex flex-wrap gap-2.5">
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--indigo-soft)] px-3.5 py-1.5 text-[12.5px] font-bold"><i data-lucide="badge-check" class="w-4 h-4 text-[var(--indigo)]"></i> Identifies as women-owned</span>
-        <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--coral)]/15 px-3.5 py-1.5 text-[12.5px] font-bold"><i data-lucide="heart-handshake" class="w-4 h-4 text-[var(--coral)]"></i> LGBTQ+ friendly</span>
+<section id="craft" class="relative py-24 lg:py-28 border-t border-[var(--line-soft)] scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+      <div class="max-w-xl">
+        <span class="eyebrow">Why Crafted</span>
+        <h2 class="font-serif-d text-4xl sm:text-5xl tracking-[-0.02em] mt-4 leading-[1.05]">Four promises,<br><em class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-2)] to-[var(--gold)]">kept daily</em>.</h2>
       </div>
+      <p class="text-[var(--muted)] max-w-sm text-sm leading-relaxed lg:text-right">Not marketing lines — these are the exact things our reviewers keep pointing out on Google.</p>
     </div>
 
-    <div class="flex flex-col gap-5">
-      <div class="hc p-7 md:p-9 bg-[var(--indigo)] text-white reveal grow flex flex-col justify-center" style="transition-delay:.06s">
-        <h3 class="font-display font-extrabold tracking-tight text-2xl md:text-3xl mb-2">Talk to us about admission</h3>
-        <p class="text-white/85 text-[15px] leading-relaxed mb-7">One call is all it takes — ask about batch timings, fees or a free visit to the centre this evening.</p>
-        <div class="flex flex-col sm:flex-row gap-3.5">
-          <a href="tel:+919205183390" class="flex-1 inline-flex items-center justify-center gap-2 bg-[var(--amber)] text-[var(--ink)] font-display font-bold rounded-full px-6 py-4 btn-hard"><i data-lucide="phone-call" class="w-4.5 h-4.5"></i> Call 092051 83390</a>
-          <button class="enquire-open flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] text-[var(--ink)] font-display font-bold rounded-full px-6 py-4 btn-hard" data-course="Not sure yet — need guidance"><i data-lucide="message-circle" class="w-4.5 h-4.5"></i> WhatsApp Enquiry</button>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
+      <div class="reveal glass-soft card-lift rounded-2xl p-7" style="transition-delay:.05s">
+        <span class="w-12 h-12 rounded-full border border-[rgba(217,169,78,.35)] bg-[rgba(217,169,78,.08)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="shield-check" class="w-5 h-5"></i></span>
+        <h3 class="font-serif-d text-xl mt-5 tracking-tight">Hygiene you can see</h3>
+        <p class="text-sm text-[var(--muted)] leading-relaxed mt-2.5">Sanitised tools, clean stations, and entry screening habits that never left. Reviewers call us a "hygiene place" for a reason.</p>
+      </div>
+      <div class="reveal glass-soft card-lift rounded-2xl p-7" style="transition-delay:.13s">
+        <span class="w-12 h-12 rounded-full border border-[rgba(217,169,78,.35)] bg-[rgba(217,169,78,.08)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="badge-check" class="w-5 h-5"></i></span>
+        <h3 class="font-serif-d text-xl mt-5 tracking-tight">Trained, humble pros</h3>
+        <p class="text-sm text-[var(--muted)] leading-relaxed mt-2.5">Academy-grade stylists who keep sharpening their craft — and treat every guest with genuine warmth.</p>
+      </div>
+      <div class="reveal glass-soft card-lift rounded-2xl p-7" style="transition-delay:.21s">
+        <span class="w-12 h-12 rounded-full border border-[rgba(217,169,78,.35)] bg-[rgba(217,169,78,.08)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="heart-handshake" class="w-5 h-5"></i></span>
+        <h3 class="font-serif-d text-xl mt-5 tracking-tight">Advice before upsell</h3>
+        <p class="text-sm text-[var(--muted)] leading-relaxed mt-2.5">"Right advice, always" — that's straight from a review. We recommend what suits your hair, not what costs more.</p>
+      </div>
+      <div class="reveal glass-soft card-lift rounded-2xl p-7" style="transition-delay:.29s">
+        <span class="w-12 h-12 rounded-full border border-[rgba(217,169,78,.35)] bg-[rgba(217,169,78,.08)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="indian-rupee" class="w-5 h-5"></i></span>
+        <h3 class="font-serif-d text-xl mt-5 tracking-tight">Honest pricing</h3>
+        <p class="text-sm text-[var(--muted)] leading-relaxed mt-2.5">Clear rates before we begin. As one guest put it — "use your valuable money only here."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative h-[380px] sm:h-[440px] overflow-hidden border-y border-[var(--line-soft)]">
+  <img src="https://images.pexels.com/photos/35844833/pexels-photo-35844833.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Elegant interior of a modern salon" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+  <div class="absolute inset-0 bg-gradient-to-r from-[rgba(11,10,8,.94)] via-[rgba(11,10,8,.72)] to-[rgba(11,10,8,.35)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 h-full flex items-center">
+    <div class="max-w-2xl reveal">
+      <i data-lucide="quote" class="w-9 h-9 text-[var(--gold)] mb-5"></i>
+      <p class="font-serif-d text-2xl sm:text-4xl leading-snug tracking-tight">"Clean and hygienic environment, supporting and trained staff. <em class="italic text-[var(--gold-2)]">Wonderful experience.</em>"</p>
+      <p class="mt-6 text-xs font-extrabold tracking-[.24em] uppercase text-[var(--muted)]">Ashwani Tiwari · Local Guide · Google Reviews</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="relative py-24 lg:py-32 scroll-mt-20">
+  <div class="glow-orb w-[460px] h-[460px] bg-[rgba(217,169,78,.07)] top-32 left-[-200px]"></div>
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl reveal">
+      <span class="eyebrow">Social proof</span>
+      <h2 class="font-serif-d text-4xl sm:text-5xl tracking-[-0.02em] mt-4 leading-[1.05]">Rated <em class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-2)] to-[var(--gold)]">4.9</em> by the neighbourhood.</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-[.9fr_1.5fr] gap-6 mt-14 items-start">
+
+      <div class="reveal glass rounded-3xl p-8 lg:sticky lg:top-28">
+        <div class="flex items-end gap-3">
+          <span class="font-serif-d text-[4.2rem] leading-none text-[var(--ivory)]">4.9</span>
+          <div class="pb-2.5">
+            <div class="flex gap-1 star">
+              <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i>
+            </div>
+            <p class="text-xs font-bold text-[var(--muted)] mt-1.5">55 reviews on Google</p>
+          </div>
+        </div>
+        <div class="mt-7 space-y-3">
+          <div class="flex items-center gap-3 text-xs font-bold text-[var(--faint)]"><span class="w-3">5</span><div class="rating-bar flex-1"><span style="width:94%"></span></div><span class="w-8 text-right">52</span></div>
+          <div class="flex items-center gap-3 text-xs font-bold text-[var(--faint)]"><span class="w-3">4</span><div class="rating-bar flex-1"><span style="width:4%"></span></div><span class="w-8 text-right">2</span></div>
+          <div class="flex items-center gap-3 text-xs font-bold text-[var(--faint)]"><span class="w-3">3</span><div class="rating-bar flex-1"><span style="width:0%"></span></div><span class="w-8 text-right">0</span></div>
+          <div class="flex items-center gap-3 text-xs font-bold text-[var(--faint)]"><span class="w-3">2</span><div class="rating-bar flex-1"><span style="width:2%"></span></div><span class="w-8 text-right">1</span></div>
+          <div class="flex items-center gap-3 text-xs font-bold text-[var(--faint)]"><span class="w-3">1</span><div class="rating-bar flex-1"><span style="width:0%"></span></div><span class="w-8 text-right">0</span></div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-7">
+          <span class="chip"><i data-lucide="sparkles" class="w-3 h-3 text-[var(--gold)]"></i>hygiene place · 2</span>
+          <span class="chip"><i data-lucide="indian-rupee" class="w-3 h-3 text-[var(--gold)]"></i>money · 2</span>
+          <span class="chip"><i data-lucide="palette" class="w-3 h-3 text-[var(--gold)]"></i>hair colour</span>
+          <span class="chip"><i data-lucide="users" class="w-3 h-3 text-[var(--gold)]"></i>trained staff</span>
+        </div>
+        <div class="flex flex-col gap-3 mt-8">
+          <a href="https://www.google.com/maps/search/?api=1&query=Crafted%20Salon%20%7C%20Academy%20Babarpur%20Shahdara%20Delhi" target="_blank" rel="noopener" class="btn-gold py-3.5 text-sm w-full">
+            <i data-lucide="pen-line" class="w-4 h-4"></i>Write a review
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Crafted%20Salon%20%7C%20Academy%20Babarpur%20Shahdara%20Delhi" target="_blank" rel="noopener" class="btn-ghost py-3.5 text-sm w-full">
+            Read all 55 on Google <i data-lucide="external-link" class="w-3.5 h-3.5 text-[var(--gold)]"></i>
+          </a>
         </div>
       </div>
-      <a href="https://www.google.com/maps/search/?api=1&query=Shriji+Tuition+Classes+Babarpur+Shahdara+Delhi+110032" target="_blank" rel="noopener" class="hc hc-hover p-6 flex items-center justify-between gap-4 group reveal" style="transition-delay:.12s">
-        <div class="flex items-center gap-4">
-          <span class="w-12 h-12 grid place-items-center rounded-xl bg-[var(--coral)] border-2 border-[var(--ink)] shrink-0"><i data-lucide="route" class="w-6 h-6 text-white"></i></span>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+
+        <article class="reveal glass card-lift rounded-3xl p-7 sm:col-span-2">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#D9A94E] to-[#8A5F1C] flex items-center justify-center font-extrabold text-[#181003] text-sm shrink-0">AT</span>
+              <div>
+                <p class="font-bold text-sm">Ashwani Tiwari</p>
+                <p class="text-[.7rem] text-[var(--faint)] font-semibold mt-0.5">Local Guide · 57 reviews · 5 years ago</p>
+              </div>
+            </div>
+            <div class="flex gap-.5 star shrink-0"><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i></div>
+          </div>
+          <p class="text-[.92rem] text-[var(--muted)] leading-relaxed mt-4">"Wonderful experience... clean and hygienic environment, supporting and trained staff... Covid-19 precautions adopted here... thermal scanning on entry...."</p>
+          <div class="flex items-center gap-4 mt-5 pt-4 border-t border-[var(--line-soft)] text-[.7rem] font-bold text-[var(--faint)]">
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="thumbs-up" class="w-3.5 h-3.5"></i>1</span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>via Google Reviews</span>
+          </div>
+        </article>
+
+        <article class="reveal glass card-lift rounded-3xl p-7" style="transition-delay:.1s">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#C97F6A] to-[#7C4234] flex items-center justify-center font-extrabold text-[#1B0E0A] text-sm shrink-0">HB</span>
+              <div>
+                <p class="font-bold text-sm">hemant bhargava</p>
+                <p class="text-[.7rem] text-[var(--faint)] font-semibold mt-0.5">10 reviews · 4 years ago</p>
+              </div>
+            </div>
+            <div class="flex gap-.5 star shrink-0"><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i></div>
+          </div>
+          <p class="text-[.92rem] text-[var(--muted)] leading-relaxed mt-4">"Great experience, must visit once. Very professional staff who gives you right advice always. Keep it up."</p>
+          <div class="flex items-center gap-4 mt-5 pt-4 border-t border-[var(--line-soft)] text-[.7rem] font-bold text-[var(--faint)]">
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="thumbs-up" class="w-3.5 h-3.5"></i>2</span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>via Google Reviews</span>
+          </div>
+        </article>
+
+        <article class="reveal glass card-lift rounded-3xl p-7" style="transition-delay:.18s">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <span class="w-11 h-11 rounded-full bg-gradient-to-br from-[#8FA98F] to-[#4C6650] flex items-center justify-center font-extrabold text-[#0D140E] text-sm shrink-0">NA</span>
+              <div>
+                <p class="font-bold text-sm">Nitin Aggarwal</p>
+                <p class="text-[.7rem] text-[var(--faint)] font-semibold mt-0.5">5 reviews · 5 years ago</p>
+              </div>
+            </div>
+            <div class="flex gap-.5 star shrink-0"><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i></div>
+          </div>
+          <p class="text-[.92rem] text-[var(--muted)] leading-relaxed mt-4">"Very much professional staff and hygiene place, must visit and use your valuable money only here."</p>
+          <div class="flex items-center gap-4 mt-5 pt-4 border-t border-[var(--line-soft)] text-[.7rem] font-bold text-[var(--faint)]">
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="thumbs-up" class="w-3.5 h-3.5"></i></span>
+            <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>via Google Reviews</span>
+          </div>
+        </article>
+
+        <div class="reveal glass-soft card-lift rounded-3xl p-7 flex flex-col justify-center border-l-2 !border-l-[var(--gold)]" style="transition-delay:.1s">
+          <i data-lucide="quote" class="w-6 h-6 text-[var(--gold)]"></i>
+          <p class="font-serif-d text-xl leading-snug mt-3">"Satisfied with the hair color service."</p>
+          <p class="text-[.7rem] font-extrabold tracking-[.2em] uppercase text-[var(--faint)] mt-4">Google review summary</p>
+        </div>
+
+        <div class="reveal glass-soft card-lift rounded-3xl p-7 flex flex-col justify-center border-l-2 !border-l-[var(--gold)]" style="transition-delay:.18s">
+          <i data-lucide="quote" class="w-6 h-6 text-[var(--gold)]"></i>
+          <p class="font-serif-d text-xl leading-snug mt-3">"Excellent service and humble person!"</p>
+          <p class="text-[.7rem] font-extrabold tracking-[.2em] uppercase text-[var(--faint)] mt-4">Google review summary</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="relative py-24 lg:py-32 border-t border-[var(--line-soft)] scroll-mt-20">
+  <div class="glow-orb w-[520px] h-[520px] bg-[rgba(217,169,78,.06)] bottom-0 right-[-220px]"></div>
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl reveal">
+      <span class="eyebrow">Find us</span>
+      <h2 class="font-serif-d text-4xl sm:text-5xl tracking-[-0.02em] mt-4 leading-[1.05]">Right on <em class="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-2)] to-[var(--gold)]">Main Babarpur Road</em>.</h2>
+      <p class="text-[var(--muted)] mt-5 leading-relaxed">Opposite the M.C.D Office — look for the warm lights and the scissors. Walk-ins welcome till 9 PM, all days.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6 mt-14 items-stretch">
+      <div class="reveal glass rounded-3xl p-8 flex flex-col gap-7">
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 rounded-xl bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)] shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+          <div class="flex-1">
+            <p class="text-[.68rem] font-extrabold tracking-[.22em] uppercase text-[var(--faint)]">Address</p>
+            <p class="text-[.95rem] leading-relaxed mt-1.5 text-[var(--ivory)]">1/7790, Main Babarpur Road, Opp. M.C.D Office,<br>Babarpur, Shahdara, Delhi — 110032</p>
+          </div>
+          <button id="copyAddr" class="w-9 h-9 rounded-lg border border-[var(--line)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--gold-2)] hover:border-[rgba(217,169,78,.5)] transition-all shrink-0" title="Copy address">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 rounded-xl bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)] shrink-0"><i data-lucide="phone" class="w-5 h-5"></i></span>
           <div>
-            <p class="font-display font-bold text-[17px]">Get directions</p>
-            <p class="text-[13px] font-semibold text-[var(--ink-soft)]">Opens in Google Maps · M7QJ+M7 Delhi</p>
+            <p class="text-[.68rem] font-extrabold tracking-[.22em] uppercase text-[var(--faint)]">Phone &amp; WhatsApp</p>
+            <a href="tel:+919899896293" class="text-[.95rem] mt-1.5 inline-block text-[var(--ivory)] hover:text-[var(--gold-2)] transition-colors font-semibold">098998 96293</a>
           </div>
         </div>
-        <i data-lucide="arrow-up-right" class="w-6 h-6 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- ══════════ FINAL CTA BAND ══════════ -->
-<section class="bg-[var(--amber)] border-t-2 border-[var(--ink)] relative overflow-hidden">
-  <svg class="absolute -right-10 -top-10 w-64 h-64 text-[var(--ink)]/10 spin-slow" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true"><path d="M100 0l10.4 33.2L143 12.7l-8.4 34.4 34.4-8.4-20.5 32.6 33.2 10.4-33.2 10.4 20.5 32.6-34.4-8.4 8.4 34.4-32.6-20.5L100 182l-10.4-33.2L57 169.3l8.4-34.4-34.4 8.4 20.5-32.6L18.3 100l33.2-10.4L31 57l34.4 8.4L57 31l32.6 20.5z"/></svg>
-  <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-20 text-center">
-    <p class="font-hindi font-bold text-xl md:text-2xl mb-3 reveal">अभी दाखिला लें — बैच शाम को भरते हैं</p>
-    <h2 class="font-display font-extrabold tracking-tight text-[clamp(1.9rem,4.6vw,3.4rem)] leading-tight max-w-3xl mx-auto mb-8 reveal">Better marks are one phone call away.</h2>
-    <div class="flex flex-wrap justify-center gap-3.5 reveal">
-      <a href="tel:+919205183390" class="inline-flex items-center gap-2 bg-[var(--ink)] text-[var(--paper)] font-display font-bold rounded-full px-8 py-4 text-[15px] btn-hard" style="box-shadow:4px 4px 0 0 rgba(23,22,48,.35)"><i data-lucide="phone" class="w-4.5 h-4.5"></i> 092051 83390</a>
-      <button class="enquire-open inline-flex items-center gap-2 bg-white font-display font-bold rounded-full px-8 py-4 text-[15px] btn-hard" data-course="Not sure yet — need guidance"><i data-lucide="send" class="w-4.5 h-4.5 text-[var(--indigo)]"></i> Enquire on WhatsApp</button>
-    </div>
-  </div>
-</section>
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 rounded-xl bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)] shrink-0"><i data-lucide="clock" class="w-5 h-5"></i></span>
+          <div class="flex-1">
+            <p class="text-[.68rem] font-extrabold tracking-[.22em] uppercase text-[var(--faint)]">Hours</p>
+            <p class="text-[.95rem] mt-1.5 text-[var(--ivory)]">Open daily · Closes 9:00 PM</p>
+            <p class="text-xs mt-1 inline-flex items-center gap-1.5 text-emerald-400 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Open right now</p>
+          </div>
+        </div>
 
-<!-- ══════════ FOOTER ══════════ -->
-<footer class="bg-[var(--ink)] text-[var(--paper)] grid-bg-dark">
-  <div class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-3 gap-10">
-    <div>
-      <div class="flex items-center gap-3 mb-4">
-        <span class="w-11 h-11 grid place-items-center rounded-xl border-2 border-[var(--paper)]/30 bg-[var(--indigo)]"><span class="font-hindi font-bold text-lg leading-none pt-[2px]">श्री</span></span>
-        <div class="leading-tight">
-          <p class="font-display font-extrabold">Shriji Tuition Classes</p>
-          <p class="font-hindi text-[13px] text-[var(--paper)]/60">श्रीजी ट्यूशन क्लासेज</p>
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 rounded-xl bg-[rgba(217,169,78,.1)] border border-[rgba(217,169,78,.25)] flex items-center justify-center text-[var(--gold)] shrink-0"><i data-lucide="navigation" class="w-5 h-5"></i></span>
+          <div>
+            <p class="text-[.68rem] font-extrabold tracking-[.22em] uppercase text-[var(--faint)]">Plus code</p>
+            <p class="text-[.95rem] mt-1.5 text-[var(--ivory)] font-semibold tracking-wide">M7MM+Q6 Delhi</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2 mt-auto">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Crafted%20Salon%20Academy%2C%20Main%20Babarpur%20Road%2C%20Babarpur%2C%20Shahdara%2C%20Delhi%20110032" target="_blank" rel="noopener" class="btn-gold flex-1 py-4 text-sm">
+            <i data-lucide="navigation" class="w-4 h-4"></i>Get directions
+          </a>
+          <a href="https://wa.me/919899896293?text=Hi%20Crafted%20Salon%20%7C%20Academy!%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn-ghost flex-1 py-4 text-sm">
+            <i data-lucide="message-circle" class="w-4 h-4 text-[var(--gold)]"></i>WhatsApp us
+          </a>
         </div>
       </div>
-      <p class="text-[14px] text-[var(--paper)]/65 leading-relaxed">5.0★ rated tutoring service in Babarpur, Shahdara — trusted by 45 five-star Google reviews. Women-owned &amp; LGBTQ+ friendly.</p>
-    </div>
-    <div>
-      <p class="text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--amber)] mb-4">Quick links</p>
-      <nav class="flex flex-col gap-2.5 text-[14.5px] font-semibold text-[var(--paper)]/80">
-        <a href="#why" class="hover:text-[var(--amber)] transition-colors">Why choose us</a>
-        <a href="#courses" class="hover:text-[var(--amber)] transition-colors">Courses &amp; batches</a>
-        <a href="#mentors" class="hover:text-[var(--amber)] transition-colors">Mentors</a>
-        <a href="#reviews" class="hover:text-[var(--amber)] transition-colors">Reviews</a>
-        <a href="#contact" class="hover:text-[var(--amber)] transition-colors">Location &amp; contact</a>
-      </nav>
-    </div>
-    <div>
-      <p class="text-[12px] font-bold uppercase tracking-[0.16em] text-[var(--amber)] mb-4">Reach us</p>
-      <div class="flex flex-col gap-3 text-[14.5px] text-[var(--paper)]/80 font-medium">
-        <p class="flex gap-2.5"><i data-lucide="map-pin" class="w-4.5 h-4.5 mt-[2px] shrink-0 text-[var(--amber)]"></i>1000-E, Lohiya Gali 04, Babarpur, near Maladevi School, Shahdara, Delhi — 110032</p>
-        <p class="flex gap-2.5 items-center"><i data-lucide="phone" class="w-4.5 h-4.5 shrink-0 text-[var(--amber)]"></i><a href="tel:+919205183390" class="hover:text-[var(--amber)] transition-colors">092051 83390</a></p>
-        <p class="flex gap-2.5 items-center"><i data-lucide="clock" class="w-4.5 h-4.5 shrink-0 text-[var(--amber)]"></i>Open · Closes 8:30 PM</p>
-        <p class="flex gap-2.5 items-center"><i data-lucide="navigation" class="w-4.5 h-4.5 shrink-0 text-[var(--amber)]"></i>Plus code: M7QJ+M7 Delhi</p>
+
+      <div class="reveal rounded-3xl overflow-hidden border border-[var(--line)] relative min-h-[420px] lg:min-h-0" style="transition-delay:.12s">
+        <iframe class="map-dark absolute inset-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="https://www.google.com/maps?q=Crafted%20Salon%20%7C%20Academy%2C%201%2F7790%20Main%20Babarpur%20Road%2C%20Opp.%20M.C.D%20Office%2C%20Babarpur%2C%20Shahdara%2C%20Delhi%20110032&output=embed"
+          title="Crafted Salon | Academy location map"></iframe>
+        <div class="absolute bottom-4 left-4 glass rounded-xl px-4 py-3 flex items-center gap-3 pointer-events-none">
+          <i data-lucide="scissors" class="w-4 h-4 text-[var(--gold)]"></i>
+          <div>
+            <p class="text-xs font-extrabold">Crafted Salon | Academy</p>
+            <p class="text-[.65rem] font-semibold text-[var(--muted)]">Opp. M.C.D Office, Babarpur</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="border-t border-[var(--paper)]/15">
-    <div class="max-w-7xl mx-auto px-4 py-5 flex flex-wrap items-center justify-between gap-3 text-[12.5px] font-medium text-[var(--paper)]/55">
-      <p>© <span id="year">2026</span> Shriji Tuition Classes · Babarpur, Shahdara, Delhi</p>
-      <p class="inline-flex items-center gap-1.5"><i data-lucide="star" class="w-3.5 h-3.5 fill-[var(--amber)] text-[var(--amber)]"></i> Rated 5.0 on Google · 45 reviews</p>
+</section>
+
+</main>
+
+<footer class="border-t border-[var(--line-soft)] bg-[rgba(16,13,9,.6)]">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-1">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2A2110] to-[#16110A] border border-[var(--line)] flex items-center justify-center text-[var(--gold)]"><i data-lucide="scissors" class="w-5 h-5"></i></span>
+        <span class="leading-tight">
+          <span class="block font-serif-d text-xl tracking-tight">Crafted</span>
+          <span class="block text-[.58rem] font-extrabold tracking-[.34em] text-[var(--gold)] uppercase">Salon | Academy</span>
+        </span>
+      </a>
+      <p class="text-sm text-[var(--muted)] leading-relaxed mt-5">A 4.9★ unisex beauty parlour and training academy in Babarpur, Shahdara. Crafted looks, honest advice.</p>
+      <div class="flex gap-1 star mt-4"><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><i data-lucide="star" class="w-3.5 h-3.5"></i><span class="text-xs font-bold text-[var(--muted)] ml-2">4.9 · 55 reviews</span></div>
+    </div>
+    <div>
+      <p class="text-[.68rem] font-extrabold tracking-[.24em] uppercase text-[var(--gold)]">Explore</p>
+      <ul class="mt-5 space-y-3 text-sm text-[var(--muted)]">
+        <li><a href="#services" class="hover:text-[var(--gold-2)] transition-colors">Services</a></li>
+        <li><a href="#craft" class="hover:text-[var(--gold-2)] transition-colors">The Craft</a></li>
+        <li><a href="#reviews" class="hover:text-[var(--gold-2)] transition-colors">Reviews</a></li>
+        <li><a href="#visit" class="hover:text-[var(--gold-2)] transition-colors">Visit Us</a></li>
+        <li><a href="#book" class="hover:text-[var(--gold-2)] transition-colors">Book a Chair</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-[.68rem] font-extrabold tracking-[.24em] uppercase text-[var(--gold)]">Popular services</p>
+      <ul class="mt-5 space-y-3 text-sm text-[var(--muted)]">
+        <li>Hair Colour &amp; Balayage</li>
+        <li>Keratin &amp; Hair Spa</li>
+        <li>Facials &amp; Clean-ups</li>
+        <li>Party Makeup</li>
+        <li>Academy Courses</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-[.68rem] font-extrabold tracking-[.24em] uppercase text-[var(--gold)]">Contact</p>
+      <ul class="mt-5 space-y-4 text-sm text-[var(--muted)]">
+        <li class="flex gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-[var(--gold)] shrink-0 mt-0.5"></i>1/7790, Main Babarpur Road, Opp. M.C.D Office, Babarpur, Shahdara, Delhi — 110032</li>
+        <li class="flex gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-[var(--gold)] shrink-0 mt-0.5"></i><a href="tel:+919899896293" class="hover:text-[var(--gold-2)] transition-colors">098998 96293</a></li>
+        <li class="flex gap-2.5"><i data-lucide="clock" class="w-4 h-4 text-[var(--gold)] shrink-0 mt-0.5"></i>Open daily · Closes 9:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-[var(--line-soft)]">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[.72rem] font-semibold text-[var(--faint)]">
+      <p>© <span id="year"></span> Crafted Salon | Academy · Babarpur, Shahdara, Delhi</p>
+      <p lang="hi" class="tracking-widest">क्राफ्टेड सालों | अकैडमी</p>
+      <button id="toTop" class="inline-flex items-center gap-2 hover:text-[var(--gold-2)] transition-colors uppercase tracking-[.2em]">Back to top <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i></button>
     </div>
   </div>
 </footer>
 
-<!-- ══════════ FLOATING ENQUIRE BUTTON ══════════ -->
-<button id="floatEnquire" class="enquire-open fixed bottom-5 right-5 z-40 pulse-ring inline-flex items-center gap-2.5 bg-[var(--amber)] font-display font-bold rounded-full pl-4 pr-6 py-4 border-2 border-[var(--ink)] shadow-[4px_4px_0_0_var(--ink)] text-[15px] transition-transform hover:scale-[1.04] active:scale-95" data-course="">
-  <span class="w-9 h-9 grid place-items-center rounded-full bg-[var(--ink)]"><i data-lucide="message-circle" class="w-4.5 h-4.5 text-[var(--amber)]"></i></span>
-  Enquire Now
-</button>
+<a href="https://wa.me/919899896293?text=Hi%20Crafted%20Salon%20%7C%20Academy!%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full btn-gold pulse-ring !p-0 flex items-center justify-center">
+  <i data-lucide="message-circle" class="w-6 h-6"></i>
+</a>
 
-<!-- ══════════ ENQUIRY MODAL (pure JS toggle → wa.me deep link) ══════════ -->
-<div id="enquiryModal" class="hidden fixed inset-0 z-50">
-  <div id="modalBackdrop" class="absolute inset-0 bg-[var(--ink)]/65 backdrop-blur-sm"></div>
-  <div class="absolute inset-0 overflow-y-auto flex items-start sm:items-center justify-center p-4 py-8">
-    <div id="modalCard" class="modal-pop relative w-full max-w-md hc !rounded-3xl p-7 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button id="modalClose" class="absolute top-4 right-4 w-10 h-10 grid place-items-center rounded-full border-2 border-[var(--ink)] bg-white shadow-[2px_2px_0_0_var(--ink)] hover:bg-[var(--amber)] transition-colors" aria-label="Close enquiry form">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-
-      <span class="inline-flex items-center gap-1.5 chip rounded-full bg-[var(--mint)]/25 px-3 py-1 text-[11.5px] font-extrabold uppercase tracking-wider mb-4">
-        <i data-lucide="zap" class="w-3.5 h-3.5 text-[var(--amber-deep)]"></i> Response on WhatsApp
-      </span>
-      <h3 id="modalTitle" class="font-display font-extrabold tracking-tight text-2xl mb-1.5">Admission enquiry</h3>
-      <p class="text-[14px] text-[var(--ink-soft)] mb-6">Fill this in — we&rsquo;ll open WhatsApp with your enquiry ready to send to <strong>092051 83390</strong>.</p>
-
-      <form id="enquiryForm" novalidate class="flex flex-col gap-4">
-        <div>
-          <label for="fName" class="block text-[12.5px] font-bold uppercase tracking-wider mb-1.5">Student / parent name</label>
-          <input id="fName" type="text" autocomplete="name" placeholder="e.g. Aarav Sharma" class="w-full rounded-xl border-2 border-[var(--ink)] bg-[var(--paper)] px-4 py-3 text-[15px] font-medium placeholder:text-[var(--ink)]/35 focus:outline-none focus:ring-4 focus:ring-[var(--indigo)]/25 transition-shadow" />
-          <p id="eName" class="hidden text-[12.5px] font-bold text-[var(--coral)] mt-1.5">Please enter a name.</p>
-        </div>
-        <div>
-          <label for="fPhone" class="block text-[12.5px] font-bold uppercase tracking-wider mb-1.5">Phone number</label>
-          <input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" class="w-full rounded-xl border-2 border-[var(--ink)] bg-[var(--paper)] px-4 py-3 text-[15px] font-medium placeholder:text-[var(--ink)]/35 focus:outline-none focus:ring-4 focus:ring-[var(--indigo)]/25 transition-shadow" />
-          <p id="ePhone" class="hidden text-[12.5px] font-bold text-[var(--coral)] mt-1.5">Please enter a valid 10-digit number.</p>
-        </div>
-        <div>
-          <label for="fCourse" class="block text-[12.5px] font-bold uppercase tracking-wider mb-1.5">Course interested in</label>
-          <select id="fCourse" class="w-full rounded-xl border-2 border-[var(--ink)] bg-[var(--paper)] px-4 py-3 text-[15px] font-medium focus:outline-none focus:ring-4 focus:ring-[var(--indigo)]/25 transition-shadow appearance-none" style="background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23171630' stroke-width='2.5'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E&quot;); background-repeat:no-repeat; background-position:right 1rem center;">
-            <option value="">Select a course…</option>
-            <option>Foundation Batch (Class VI–VIII)</option>
-            <option>Board Batch (Class IX–X)</option>
-            <option>Senior Batch (Class XI–XII)</option>
-            <option>Board Booster (Class X revision)</option>
-            <option>Not sure yet — need guidance</option>
-          </select>
-          <p id="eCourse" class="hidden text-[12.5px] font-bold text-[var(--coral)] mt-1.5">Please pick a course.</p>
-        </div>
-        <button type="submit" class="mt-1.5 inline-flex items-center justify-center gap-2 bg-[#25D366] font-display font-bold rounded-full px-6 py-4 text-[15px] btn-hard">
-          <i data-lucide="message-circle" class="w-5 h-5"></i> <span id="submitLabel">Send on WhatsApp</span>
-        </button>
-        <p class="text-center text-[12.5px] font-semibold text-[var(--ink-soft)]">Prefer talking? <a href="tel:+919205183390" class="font-bold underline decoration-[var(--amber)] decoration-2 underline-offset-2 text-[var(--ink)]">Call 092051 83390</a></p>
-      </form>
-    </div>
-  </div>
-</div>
-
-<script src="https://unpkg.com/lucide@latest"></script>
 <script>
-(function(){
-  'use strict';
+lucide.createIcons();
 
-  /* ── Footer year ── */
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* ── Mobile menu ── */
-  var menuBtn = document.getElementById('menuBtn');
-  var mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', function(){ mobileMenu.classList.toggle('hidden'); });
-  mobileMenu.querySelectorAll('.mobile-link').forEach(function(a){
-    a.addEventListener('click', function(){ mobileMenu.classList.add('hidden'); });
+const header = document.getElementById('siteHeader');
+const onScroll = () => header.classList.toggle('header-scrolled', window.scrollY > 12);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const iconOpen = document.getElementById('menuIconOpen');
+const iconClose = document.getElementById('menuIconClose');
+menuBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('hidden');
+  iconOpen.classList.toggle('hidden', !open);
+  iconClose.classList.toggle('hidden', open);
+});
+document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.add('hidden');
+  iconOpen.classList.remove('hidden');
+  iconClose.classList.add('hidden');
+}));
+
+document.getElementById('marqueeClone').innerHTML = document.getElementById('marqueeSet').innerHTML;
+lucide.createIcons();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const WA_NUMBER = '919899896293';
+const form = document.getElementById('waForm');
+const nameEl = document.getElementById('fName');
+const serviceEl = document.getElementById('fService');
+const phoneEl = document.getElementById('fPhone');
+const statusEl = document.getElementById('waStatus');
+const fallbackEl = document.getElementById('waFallback');
+const submitBtn = document.getElementById('waSubmit');
+const submitLabel = document.getElementById('waSubmitLabel');
+
+serviceEl.addEventListener('change', () => serviceEl.classList.remove('text-[var(--muted)]'));
+
+function showErr(id, on) { document.getElementById(id).classList.toggle('hidden', !on); }
+
+function buildWaLink(name, service, phone) {
+  const msg = `Hi Crafted Salon | Academy!\nI'd like to book an appointment.\n\nName: ${name}\nService: ${service}\nPhone: ${phone}\n\nPlease confirm a slot for me.`;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = nameEl.value.trim();
+  const service = serviceEl.value;
+  const digits = phoneEl.value.replace(/\D/g, '').replace(/^91(?=\d{10}$)/, '').replace(/^0(?=\d{10}$)/, '');
+  const okName = name.length >= 2;
+  const okService = !!service;
+  const okPhone = digits.length === 10;
+  showErr('errName', !okName);
+  showErr('errService', !okService);
+  showErr('errPhone', !okPhone);
+  if (!okName || !okService || !okPhone) {
+    (!okName ? nameEl : !okService ? serviceEl : phoneEl).focus();
+    return;
+  }
+  const link = buildWaLink(name, service, digits);
+  fallbackEl.href = link;
+  submitLabel.textContent = 'Opening WhatsApp…';
+  window.open(link, '_blank', 'noopener');
+  statusEl.classList.remove('hidden');
+  setTimeout(() => {
+    submitLabel.textContent = 'Send booking request';
+  }, 2200);
+});
+
+document.querySelectorAll('.service-book').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const svc = btn.getAttribute('data-service');
+    [...serviceEl.options].forEach(o => { if (o.text === svc) serviceEl.value = o.value || o.text; });
+    serviceEl.value = svc;
+    serviceEl.dispatchEvent(new Event('change'));
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const card = document.getElementById('book');
+    card.classList.add('form-flash');
+    setTimeout(() => card.classList.remove('form-flash'), 1600);
+    setTimeout(() => nameEl.focus({ preventScroll: true }), 650);
   });
+});
 
-  /* ── Tabbed hero (pure JS) ── */
-  var TABS = {
-    f: {
-      eyebrow: 'Foundation · Class 6 to 8',
-      title: 'Strong basics today. <mark class="hl">Easy boards</mark> tomorrow.',
-      copy: 'All-subject foundation batches for Class VI–VIII — daily concepts, homework support and regular tests at our Babarpur centre, near Maladevi School.',
-      chips: ['Maths','Science','English','Social Science'],
-      cta: 'Enquire for Class VI–VIII',
-      course: 'Foundation Batch (Class VI–VIII)'
-    },
-    b: {
-      eyebrow: 'Board years · Class 9 & 10',
-      title: 'Walk into Class X boards <mark class="hl">fully prepared</mark>.',
-      copy: 'Board-focused coaching for Class IX–X — concepts line-by-line, sample-paper practice and doubt-clearing till 8:30 PM. One of our students scored 98% in Class X boards.',
-      chips: ['Maths','Science','Social Science','English','Board Prep'],
-      cta: 'Enquire for Class IX–X',
-      course: 'Board Batch (Class IX–X)'
-    },
-    s: {
-      eyebrow: 'Senior wing · Class 11 & 12',
-      title: 'Senior classes, taught with <mark class="hl">real depth</mark>.',
-      copy: 'Concept-first batches for Class XI–XII — numericals, derivations and answer-writing practice that actually sticks, guided personally by the centre\u2019s educators.',
-      chips: ['Physics','Chemistry','Maths','Answer Writing'],
-      cta: 'Enquire for Class XI–XII',
-      course: 'Senior Batch (Class XI–XII)'
-    }
+document.getElementById('copyAddr').addEventListener('click', function () {
+  const addr = 'Crafted Salon | Academy, 1/7790, Main Babarpur Road, Opp. M.C.D Office, Babarpur, Shahdara, Delhi - 110032';
+  const done = () => {
+    this.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>';
+    lucide.createIcons();
+    setTimeout(() => { this.innerHTML = '<i data-lucide="copy" class="w-4 h-4"></i>'; lucide.createIcons(); }, 1800);
   };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(addr).then(done).catch(done);
+  } else { done(); }
+});
 
-  var swap = document.getElementById('heroSwap');
-  var elEyebrow = document.getElementById('heroEyebrow');
-  var elTitle = document.getElementById('heroTitle');
-  var elCopy = document.getElementById('heroCopy');
-  var elChips = document.getElementById('heroChips');
-  var elCtaText = document.getElementById('heroCtaText');
-  var heroCta = document.getElementById('heroCta');
-  var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
-  var activeTab = 'b';
-
-  function paintTab(key){
-    var t = TABS[key];
-    elEyebrow.textContent = t.eyebrow;
-    elTitle.innerHTML = t.title;
-    elCopy.textContent = t.copy;
-    elCtaText.textContent = t.cta;
-    heroCta.setAttribute('data-course', t.course);
-    elChips.innerHTML = t.chips.map(function(c){
-      return '<span class="chip rounded-full bg-white px-3.5 py-1.5 text-[12.5px] font-bold shadow-[2px_2px_0_0_var(--ink)]">' + c + '</span>';
-    }).join('');
-  }
-
-  function setTabStyles(){
-    tabBtns.forEach(function(btn){
-      var on = btn.getAttribute('data-tab') === activeTab;
-      btn.classList.toggle('bg-[var(--ink)]', on);
-      btn.classList.toggle('text-[var(--paper)]', on);
-      btn.classList.toggle('bg-transparent', !on);
-      btn.setAttribute('aria-selected', on ? 'true' : 'false');
-    });
-  }
-
-  function selectTab(key, instant){
-    if(key === activeTab && !instant) return;
-    activeTab = key;
-    setTabStyles();
-    if(instant){ paintTab(key); return; }
-    swap.classList.add('swap-out');
-    window.setTimeout(function(){
-      paintTab(key);
-      swap.classList.remove('swap-out');
-    }, 180);
-  }
-
-  tabBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){ selectTab(btn.getAttribute('data-tab')); });
-  });
-  selectTab('b', true);
-
-  /* ── Enquiry modal (pure JS) ── */
-  var modal = document.getElementById('enquiryModal');
-  var modalCard = document.getElementById('modalCard');
-  var backdrop = document.getElementById('modalBackdrop');
-  var closeBtn = document.getElementById('modalClose');
-  var form = document.getElementById('enquiryForm');
-  var fName = document.getElementById('fName');
-  var fPhone = document.getElementById('fPhone');
-  var fCourse = document.getElementById('fCourse');
-  var eName = document.getElementById('eName');
-  var ePhone = document.getElementById('ePhone');
-  var eCourse = document.getElementById('eCourse');
-  var submitLabel = document.getElementById('submitLabel');
-
-  function openModal(course){
-    if(course){
-      for(var i = 0; i < fCourse.options.length; i++){
-        if(fCourse.options[i].text === course){ fCourse.selectedIndex = i; break; }
-      }
-    }
-    modal.classList.remove('hidden');
-    modalCard.classList.remove('modal-pop');
-    void modalCard.offsetWidth; /* restart pop animation */
-    modalCard.classList.add('modal-pop');
-    document.body.style.overflow = 'hidden';
-    window.setTimeout(function(){ fName.focus(); }, 120);
-  }
-  function closeModal(){
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-
-  document.querySelectorAll('.enquire-open').forEach(function(btn){
-    btn.addEventListener('click', function(){ openModal(btn.getAttribute('data-course') || ''); });
-  });
-  closeBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
-  });
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var ok = true;
-    var name = fName.value.trim();
-    var digits = fPhone.value.replace(/\D/g, '').replace(/^91(?=\d{10}$)/, '');
-    var course = fCourse.value;
-
-    eName.classList.toggle('hidden', name.length > 0);
-    if(name.length === 0) ok = false;
-
-    var phoneOk = /^\d{10}$/.test(digits);
-    ePhone.classList.toggle('hidden', phoneOk);
-    if(!phoneOk) ok = false;
-
-    eCourse.classList.toggle('hidden', course !== '');
-    if(course === '') ok = false;
-
-    if(!ok){
-      modalCard.classList.remove('shake');
-      void modalCard.offsetWidth;
-      modalCard.classList.add('shake');
-      return;
-    }
-
-    var msg = 'Hello Shriji Tuition Classes! My name is ' + name +
-              '. I want to enquire about: ' + course +
-              '. My phone number is ' + digits +
-              '. Please share admission details, fees and batch timings.';
-
-    submitLabel.textContent = 'Opening WhatsApp…';
-    window.open('https://wa.me/919205183390?text=' + encodeURIComponent(msg), '_blank');
-
-    window.setTimeout(function(){
-      submitLabel.textContent = 'Send on WhatsApp';
-      closeModal();
-    }, 700);
-  });
-
-  /* ── Mentor row arrows ── */
-  var row = document.getElementById('mentorRow');
-  document.getElementById('mentorPrev').addEventListener('click', function(){
-    row.scrollBy({ left: -340, behavior: 'smooth' });
-  });
-  document.getElementById('mentorNext').addEventListener('click', function(){
-    row.scrollBy({ left: 340, behavior: 'smooth' });
-  });
-
-  /* ── Reveal on scroll ── */
-  var reveals = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(function(el){ io.observe(el); });
-  } else {
-    reveals.forEach(function(el){ el.classList.add('in'); });
-  }
-
-  /* ── Lucide (initialized last) ── */
-  if(window.lucide){ lucide.createIcons(); }
-})();
+document.getElementById('toTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 </body>
 </html>
